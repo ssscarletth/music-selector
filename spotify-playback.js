@@ -70,7 +70,7 @@
   class SpotifyAudio extends EventTarget {
     constructor() {
       super(); this.src=''; this.currentTime=0; this.duration=0; this.ended=false;
-      this.paused=true; this.version=0; this.commands=Promise.resolve(); this.last=null;
+      this.paused=true; this.intent=null; this.stateRevision=0; this.pollSerial=0; this.version=0; this.commands=Promise.resolve(); this.last=null;
     }
     emit(name) { this.dispatchEvent(new Event(name)); }
     enqueue(task) { const result=this.commands.then(task); this.commands=result.catch(()=>{}); return result; }
@@ -83,7 +83,7 @@
         this.player?.disconnect();
         this.player = new Spotify.Player({name:'Music Selector',volume:0.65,
           getOAuthToken:cb=>token().then(cb).catch(error=>this.fail(error))});
-        this.player.addListener('player_state_changed', state=>this.accept(state));
+        this.player.addListener('player_state_changed', state=>{this.stateRevision++;this.accept(state);});
         this.player.addListener('not_ready',()=>{this.device=null;this.paused=true;this.emit('pause');});
         this.player.addListener('autoplay_failed',()=>this.fail(Error('Click the record again to allow audio playback.')));
         await new Promise((resolve,reject)=>{
@@ -95,12 +95,19 @@
           this.player.connect().then(ok=>{if(!ok){clearTimeout(timer);reject(Error('Spotify connection failed.'));}}).catch(reject);
         });
         clearInterval(this.poll);
-        this.poll=setInterval(()=>{
-          const epoch=this.seekEpoch;
-          this.player.getCurrentState().then(s=>{if(epoch===this.seekEpoch)this.accept(s);}).catch(()=>{});
-        },500);
+        this.poll=setInterval(()=>this.syncState(),500);
       })().finally(()=>this.connection=null);
       return this.connection;
+    }
+    async syncState() {
+      const version=this.version,src=this.src,epoch=this.seekEpoch;
+      const revision=this.stateRevision,serial=++this.pollSerial;
+      try {
+        const state=await this.player.getCurrentState();
+        if(version!==this.version || src!==this.src || epoch!==this.seekEpoch ||
+           revision!==this.stateRevision || serial!==this.pollSerial)return;
+        this.accept(state);
+      } catch {} // A temporary polling failure does not mean playback stopped.
     }
     fail(error) { this.error=error;this.paused=true;this.emit('error'); }
     accept(state) {
@@ -110,8 +117,8 @@
         if(this.seekTarget && performance.now()<this.seekTarget.until)return;
         this.seekTarget=null;this.paused=true;this.emit('pause');return;
       }
-      const track=state.track_window.current_track;
-      const matches=track?.uri===this.src || track?.linked_from?.uri===this.src;
+      const track=state.track_window?.current_track;
+      const matches=track?.uri===this.src || track?.linked_from?.uri===this.src || track?.linked_from_uri===this.src;
       const previous=this.last;
       // Seek completion can precede the SDK's position update. Keep the
       // requested position until a matching state arrives (bounded to 2s).
@@ -124,6 +131,8 @@
         this.seekTarget=null;
       }
       if (!matches) { this.paused=true;this.emit('pause');return; }
+      // Ignore a delayed playing event after the user explicitly paused.
+      if(this.intent==='pause' && !state.paused)return;
       this.currentTime=state.position/1000;this.duration=state.duration/1000;
       this.paused=state.paused;
       this.last={src:this.src,position:state.position,duration:state.duration,paused:state.paused};
@@ -135,7 +144,7 @@
       this.emit(state.paused?'pause':'playing');
     }
     async play() {
-      this.activate();
+      this.activate();this.intent='play';
       const version=++this.version, src=this.src;
       await initialized;
       if (!credentials) { await authorize(); return; }
@@ -174,8 +183,12 @@
       });
     }
     pause() {
-      ++this.version;this.paused=true;
-      this.enqueue(()=>this.device?this.player.pause():undefined).catch(error=>this.fail(error));
+      const version=++this.version;this.intent='pause';this.paused=true;
+      this.emit('pause');
+      this.enqueue(()=>{
+        if(version!==this.version)return;
+        return this.device?this.player.pause():undefined;
+      }).catch(error=>{if(version===this.version)this.fail(error);});
     }
   }
   window.SpotifyAudio=SpotifyAudio;
