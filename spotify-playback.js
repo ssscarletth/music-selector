@@ -95,16 +95,34 @@
           this.player.connect().then(ok=>{if(!ok){clearTimeout(timer);reject(Error('Spotify connection failed.'));}}).catch(reject);
         });
         clearInterval(this.poll);
-        this.poll=setInterval(()=>this.player.getCurrentState().then(s=>this.accept(s)).catch(()=>{}),500);
+        this.poll=setInterval(()=>{
+          const epoch=this.seekEpoch;
+          this.player.getCurrentState().then(s=>{if(epoch===this.seekEpoch)this.accept(s);}).catch(()=>{});
+        },500);
       })().finally(()=>this.connection=null);
       return this.connection;
     }
     fail(error) { this.error=error;this.paused=true;this.emit('error'); }
     accept(state) {
-      if (!state) { this.paused=true;this.emit('pause');return; }
+      if(this.seeking)return;
+      if(this.seekTarget && this.seekTarget.src!==this.src)this.seekTarget=null;
+      if (!state) {
+        if(this.seekTarget && performance.now()<this.seekTarget.until)return;
+        this.seekTarget=null;this.paused=true;this.emit('pause');return;
+      }
       const track=state.track_window.current_track;
       const matches=track?.uri===this.src || track?.linked_from?.uri===this.src;
       const previous=this.last;
+      // Seek completion can precede the SDK's position update. Keep the
+      // requested position until a matching state arrives (bounded to 2s).
+      if(this.seekTarget){
+        const target=this.seekTarget;
+        const elapsed=state.paused?0:Math.max(0,performance.now()-target.at);
+        const confirmed=matches && state.position>=target.position-500 &&
+          state.position<=target.position+elapsed+1500;
+        if(!confirmed && performance.now()<target.until)return;
+        this.seekTarget=null;
+      }
       if (!matches) { this.paused=true;this.emit('pause');return; }
       this.currentTime=state.position/1000;this.duration=state.duration/1000;
       this.paused=state.paused;
@@ -139,6 +157,20 @@
               'Spotify playback failed ('+response.status+'). Click the record to retry.');
           }
         }
+      });
+    }
+    async seek(seconds) {
+      const src=this.src,version=this.version;
+      return this.enqueue(async()=>{
+        if(!this.device||src!==this.src||version!==this.version)return;
+        this.seeking=true;this.seekEpoch=(this.seekEpoch||0)+1;this.seekTarget=null;
+        try{
+          await this.player.seek(Math.round(seconds*1000));
+          this.currentTime=seconds;this.ended=false;
+          const at=performance.now();
+          this.seekTarget={src,position:seconds*1000,at,until:at+2000};
+          this.last={src,position:seconds*1000,duration:this.duration*1000,paused:this.paused};
+        }finally{this.seeking=false;this.emit('timeupdate');}
       });
     }
     pause() {
