@@ -1,0 +1,1365 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Music</title><meta name="description" content="Explore listening history, autonomy, and retained discoveries with three sliders."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23161920%22%2F%3E%3Cpath%20d%3D%22M14%2023V10l11-3v13%22%20fill%3D%22none%22%20stroke%3D%22%23ddfa83%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14%2014l11-3%22%20fill%3D%22none%22%20stroke%3D%22%23ddfa83%22%20stroke-width%3D%222.5%22%2F%3E%3Cellipse%20cx%3D%2210.5%22%20cy%3D%2223%22%20rx%3D%224.5%22%20ry%3D%223.5%22%20fill%3D%22%23ddfa83%22%2F%3E%3Cellipse%20cx%3D%2221.5%22%20cy%3D%2220%22%20rx%3D%224.5%22%20ry%3D%223.5%22%20fill%3D%22%23ddfa83%22%2F%3E%3C%2Fsvg%3E"><style>
+*{box-sizing:border-box}body{margin:0;background:#101216;color:#f0f0ed;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #dafa88;outline-offset:5px}header{height:86px;margin:0 4%;border-bottom:1px solid #ffffff17;display:flex;align-items:center;justify-content:space-between}.brand{font-size:25px;letter-spacing:6px;font-weight:750}.brand span{color:#dafa88}small,.muted{color:#94999f;font-size:13px}.topright{display:flex;gap:24px;align-items:center}.tag{border:1px solid #454a50;border-radius:30px;padding:5px 13px;font-size:12px;letter-spacing:1px}main{max-width:1440px;margin:auto;padding:25px 4% 36px}.sectionline{display:flex;justify-content:space-between;align-items:center;color:#9da2a8;font-size:12px;letter-spacing:2px}.history{letter-spacing:0;font-size:14px;color:#c7cbd0}.history strong{color:#dafa88;font-weight:500}.space{position:relative;min-height:482px;display:grid;grid-template-columns:1fr 300px 1fr;gap:28px;align-items:center;padding:24px 0}.side{min-width:0}.eyebrow{font-size:12px;letter-spacing:2px;color:#dafa88}.modeTitle{font-size:30px;font-weight:450;line-height:1.25;max-width:260px;margin:14px 0}.modeDesc{color:#a9aeb6;font-size:14px;max-width:250px}.number{font-size:12px;color:#737a82;letter-spacing:2px}.player{text-align:center;position:relative;z-index:1}.cover{aspect-ratio:1;border-radius:7px;background:radial-gradient(ellipse at 50% 95%,#ffe5b5 0,transparent 40%),radial-gradient(ellipse at 15% 60%,#a4adc9 0,transparent 45%),radial-gradient(ellipse at 95% 5%,#d6bcb9 0,transparent 55%),linear-gradient(140deg,#26314b,#a67e84 58%,#e1b396);box-shadow:0 20px 75px #0008;position:relative;overflow:hidden;transition:background .5s}.cover:before{content:"";position:absolute;inset:12%;border:1px solid #ffffff40;border-radius:50%;box-shadow:0 0 0 26px #ffffff08,0 0 0 53px #ffffff05}.cover:after{content:"E C H O  /  0 1";position:absolute;bottom:18px;left:20px;letter-spacing:4px;font-size:11px;color:#ffffffbc}.cover .orb{position:absolute;inset:32%;border-radius:50%;background:linear-gradient(130deg,#fff9,#4a456366);box-shadow:0 10px 40px #4444;backdrop-filter:blur(4px)}h1{font-size:24px;line-height:1.25;letter-spacing:-.5px;margin:19px 0 5px;font-weight:550}.artist{font-size:14px;color:#9ca2ac}.transport{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:16px;min-height:44px}button{background:transparent;border:0;color:inherit}.icon{font-size:23px;padding:4px 8px}.play{width:44px;height:44px;border-radius:50%;background:#e9eddf;color:#161a19;font-size:18px}.next{border:1px solid #454b52;border-radius:30px;padding:9px 20px;font-size:14px}.feedback{display:flex;gap:6px;justify-content:center;margin-top:10px}.feedback button{font-size:12px;border:1px solid #373c43;border-radius:20px;padding:5px 9px;color:#b3b9c0}.feedback button.selected{background:#dafa88;color:#141810;border-color:#dafa88}.progress{height:2px;background:#333942;margin-top:16px;overflow:hidden}.progress i{display:block;background:#dafa88;width:27%;height:100%}.time{display:flex;justify-content:space-between;font-size:11px;color:#767f8a;margin-top:5px}.suggestion{padding:21px;border:1px solid #dafa8830;border-radius:12px;background:#dafa8805;margin-top:23px;max-width:285px}.suggestion p{font-size:14px;color:#c3c8bd;line-height:1.8;margin:10px 0 0}.rightLabel{font-size:12px;letter-spacing:2px;color:#959da7;margin-bottom:18px}.satellites{position:relative;min-height:290px}.song{display:flex;align-items:center;gap:12px;padding:9px 0;animation:arrive .45s ease both}.mini{flex:none;width:44px;height:44px;border-radius:4px;background:linear-gradient(135deg,hsl(var(--h) 25% 24%),hsl(calc(var(--h) + 45) 40% 73%));position:relative;overflow:hidden}.mini:after{content:"";position:absolute;width:33px;height:33px;border:1px solid #ffffff4a;border-radius:50%;left:17px;top:12px}.song b{font-size:14px;font-weight:500;display:block}.song small{font-size:12px}.floating .song{position:absolute;background:#21252de6;border:1px solid #ffffff0d;border-radius:8px;padding:9px 13px;width:210px;box-shadow:0 10px 30px #0003}.floating .song:nth-child(1){top:12px;left:7%}.floating .song:nth-child(2){top:105px;left:26%}.floating .song:nth-child(3){top:190px;left:0}.floating .song:nth-child(4){top:-62px;left:24%}.floating .song:nth-child(5){top:270px;left:20%}.empty{color:#69717d;font-size:14px;max-width:190px;border-left:1px solid #3a424e;padding:10px 18px;margin:70px 0 0 40px}.list{max-height:330px;overflow:auto;padding-right:10px;scrollbar-width:thin;scrollbar-color:#555 transparent}.queue{margin-top:20px;max-width:280px}.queue .song{border-bottom:1px solid #ffffff0c}.queue .mini{width:32px;height:32px}.queue .song b{font-size:13px}.queue .song small{font-size:11px}.controller{background:linear-gradient(125deg,#d8dbdb,#c2c6c8 60%,#d4d7d8);color:#242a2e;border-radius:15px;padding:23px 28px 26px;box-shadow:inset 0 1px 0 #fff,0 16px 40px #0004;position:relative}.controllerHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.controllerHead b{font-size:12px;letter-spacing:3px}.controllerHead span{font-size:11px;color:#616a70;letter-spacing:1px}.controls{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:32px}.control+.control{border-left:1px solid #a7adaf;padding-left:30px}.control label{display:block;font-size:14px;font-weight:550}.control label span{color:#7a8387;margin-right:9px;font-size:12px}.value{font-size:22px;font-weight:500;margin:8px 0 10px;letter-spacing:-.5px;min-height:33px}.value small{color:#667077;font-size:12px;letter-spacing:0;margin-left:7px}.control input{width:100%;height:24px;margin:2px 0 8px;appearance:none;background:transparent;cursor:pointer}.control input::-webkit-slider-runnable-track{height:6px;background:#737d83;border-radius:4px;box-shadow:inset 0 2px 3px #0006}.control input::-webkit-slider-thumb{appearance:none;width:20px;height:30px;border-radius:4px;background:linear-gradient(90deg,#e7eaeb,#fff 45%,#b8bec0);box-shadow:0 2px 4px #0005;margin-top:-12px;border:1px solid #aab0b2}.control input::-moz-range-track{height:6px;background:#737d83}.control input::-moz-range-thumb{height:28px;width:18px;background:#eff0f0;border:1px solid #aab0b2;border-radius:4px}.ticks{display:flex;justify-content:space-between;gap:5px;font-size:11px;color:#5c666c}.ticks span{text-align:center;flex:1}.ticks span:first-child{text-align:left}.ticks span:last-child{text-align:right}.foot{display:flex;justify-content:space-between;margin-top:18px;color:#69737d;font-size:12px}.wave{height:40px;display:flex;gap:5px;justify-content:center;align-items:center}.wave i{width:3px;height:var(--height);background:#dafa88;border-radius:4px;animation:pulse 1.5s ease-in-out infinite alternate;animation-delay:var(--delay)}[hidden]{display:none!important}@keyframes pulse{to{height:5px;opacity:.4}}@keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@media(min-width:1500px){.space{min-height:550px}.cover{width:320px;margin-left:-10px}}@media(max-width:1000px){.space{grid-template-columns:1fr 260px 1fr;gap:20px}.floating .song{width:175px;left:0!important}.modeTitle{font-size:24px}.controls{gap:20px}.control+.control{padding-left:20px}.value{font-size:18px}}@media(max-width:760px){header{height:68px}.topright small{display:none}.space{grid-template-columns:1fr 1fr;gap:24px;min-height:0}.player{grid-column:1/-1;grid-row:1;width:240px;margin:10px auto}.modeTitle{font-size:22px}.side{align-self:start}.satellites{min-height:260px}.floating .song{position:static;width:100%;margin-bottom:9px}.controls{grid-template-columns:1fr;gap:22px}.control+.control{border-left:0;border-top:1px solid #a7adaf;padding:20px 0 0}.controller{padding:22px}.controllerHead span{display:none}.value{font-size:22px}.empty{margin:20px 0;padding-left:12px}.foot span:last-child{display:none}.sectionline{letter-spacing:1px}.suggestion{padding:14px}.queue{max-height:250px;overflow:auto}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.cover img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;z-index:2}.cover.hasArt:after,.cover.hasArt:before,.cover.hasArt .orb{display:none}.mini img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}.song>div:last-child{min-width:0}.song b,.song small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}.control label{min-height:42px;line-height:1.4;letter-spacing:1px;}.value{font-size:19px;min-height:58px;line-height:1.4}.value small{display:block;margin-left:0;margin-top:3px}.ticks{font-size:12px}.uncertainty{max-width:260px;margin-top:24px}.uncertainty>div:first-child{display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:1px;color:#939da7}.uncertainty b{font-weight:500;color:#dafa88}.uncertaintyTrack{height:3px;background:#343b43;margin-top:10px}.uncertaintyTrack i{display:block;height:100%;background:#dafa88;transition:width .45s}.uncertainty p{color:#858f9a;font-size:12px;margin:9px 0;line-height:1.6}.source{color:#929ca7;text-decoration:none}.source:hover{text-decoration:underline}.foot{gap:24px}.modeTitle{overflow-wrap:normal}.song{min-width:0}.feedback{flex-wrap:wrap}.floating .song{width:min(210px,78%)}.space{min-height:540px}.artist{overflow-wrap:anywhere}.controllerHead span{letter-spacing:.5px}.controller input{touch-action:pan-y}@media(max-width:1000px){.floating .song{width:100%}.controls{grid-template-columns:1fr 1.15fr 1.1fr}.value{font-size:17px}.value small{font-size:12px}}@media(max-width:760px){.controls{grid-template-columns:1fr}.control label{min-height:0}.value{min-height:0;margin-bottom:20px;font-size:21px}.foot{flex-direction:column;gap:8px}.floating .song{width:100%}.space{min-height:0}.uncertainty{margin-top:18px}.controllerHead b{letter-spacing:2px}}
+
+.record{display:block;width:100%;aspect-ratio:1;border-radius:50%;position:relative;padding:0;background:#08090b;box-shadow:0 22px 65px #0009,0 0 0 1px #ffffff18;isolation:isolate;touch-action:manipulation}.recordRotor{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:repeating-radial-gradient(circle at center,#16191c 0px,#16191c 2px,#22262a 3px,#111316 4px);animation:vinylSpin 16s linear infinite;animation-play-state:paused}.recordRotor:after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 30deg,transparent 0deg,#ffffff12 45deg,transparent 90deg,transparent 170deg,#ffffff15 220deg,transparent 260deg);pointer-events:none}.recordLabel{position:absolute;inset:16%;width:68%;height:68%;object-fit:cover;border-radius:50%;box-shadow:0 0 0 5px #07080a,0 0 0 6px #ffffff13}.recordHole{position:absolute;left:50%;top:50%;width:15px;height:15px;border-radius:50%;transform:translate(-50%,-50%);background:#101216;box-shadow:0 0 0 4px #e5e1d27a;z-index:2}.recordControl{position:absolute;inset:0;display:grid;place-items:center;z-index:3;border-radius:50%;background:#0001;transition:background .2s}.recordControl svg{width:36px;height:36px;padding:9px;box-sizing:content-box;background:#0e1113c9;border:1px solid #ffffff38;border-radius:50%;backdrop-filter:blur(8px);opacity:0;transition:opacity .2s}.record[aria-pressed="false"] .recordControl svg,.record:hover .recordControl svg,.record:focus-visible .recordControl svg{opacity:1}.record:hover .recordControl{background:#0002}.transport .icon,.feedback button{width:42px;height:42px;display:inline-grid;place-items:center;padding:8px;border:0;background:transparent;border-radius:50%;color:#c7cdd4}.transport .icon:hover,.feedback button:hover{background:#ffffff0b;color:#fff}.transport svg,.feedback svg{width:23px;height:23px;display:block}.feedback{gap:24px;margin-top:8px;min-height:42px}.feedback button.selected{background:transparent;color:#dafa88}.feedback button.selected[data-action="like"] svg{fill:currentColor}.transport:empty{display:none}.song{animation-name:fadeIn;animation-fill-mode:backwards}.song.pickable{width:100%;text-align:left;transition:transform .2s,background .2s,border-color .2s;cursor:pointer}.song.pickable:hover,.song.pickable:focus-visible{transform:scale(1.055);background:#2d343e;border-color:#dafa8850;z-index:2}.song:not(.pickable){cursor:default}.list .song.pickable{transform-origin:center;max-width:94%;margin-inline:auto}.floating .song.pickable{width:min(210px,78%)}.songText{display:block;min-width:0}.mini{display:block}.queue .song{pointer-events:none}.time{min-height:17px}@keyframes vinylSpin{to{transform:rotate(360deg)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@media(max-width:1000px){.floating .song.pickable{width:100%}}@media(max-width:760px){.floating .song.pickable{width:100%}}@media(hover:none){.recordControl svg{opacity:1}}@media(prefers-reduced-motion:reduce){.recordRotor{animation:none}.song.pickable:hover,.song.pickable:focus-visible{transform:none}}
+header{height:52px;justify-content:flex-end;border-bottom:0}main{padding-top:0}.suggestion,.queue{margin-top:0}.space{min-height:490px;padding-top:12px}@media(max-width:760px){header{height:48px}.space{min-height:0}}
+
+header{height:82px}.demoIdentity{text-align:right;line-height:1.5}.demoIdentity>div{font-size:16px;letter-spacing:1px;color:#e6e8eb}.demoIdentity small{display:block;font-size:12px;color:#88929e;margin-top:2px}.floating{display:flex;flex-direction:column;gap:14px;min-height:0;padding:8px 8px 12px}.floating .song:nth-child(n){position:relative;top:auto;left:auto!important;width:min(210px,90%);margin:0;align-self:flex-start}.floating .song:nth-child(even){align-self:flex-end}.rightLabel{position:relative;line-height:1.6;margin-bottom:14px;letter-spacing:1.4px}.soundTags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.soundTags span{font-size:12px;line-height:1.5;padding:3px 9px;border:1px solid #dafa8828;border-radius:20px;color:#c9d6ad}.reviewSource{display:inline-block;margin-top:13px;color:#8d9891;font-size:12px;text-underline-offset:3px}.reviewSource:hover{color:#dafa88}.suggestion p{line-height:1.7}@media(max-width:760px){header{height:74px}.floating .song:nth-child(n){width:100%;margin:0}.demoIdentity>div{font-size:14px}.rightLabel{font-size:11px;letter-spacing:1px}}
+.demoIdentity > div {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .demoIdentity > div {
+    font-size: 11px;
+  }
+}
+/* 共用边距：宽屏最多 80px，窄屏自动缩小 */
+.space > .side:last-child {
+  --recommendation-offset: clamp(0px, 5vw, 80px);
+}
+
+#retainedLabel {
+  margin-left: var(--recommendation-offset);
+}
+
+/* 推荐区域与标题左侧对齐 */
+#retained.floating {
+  width: auto;
+  margin-left: var(--recommendation-offset);
+  margin-right: 0;
+  padding: 8px 0 12px;
+}
+
+/* 左列 */
+#retained.floating .song:nth-child(n) {
+  width: 66.6667%;
+  align-self: flex-start;
+  margin: 0;
+}
+
+/* 右列左边缘对齐左列中线 */
+#retained.floating .song:nth-child(even) {
+  margin-left: 33.3333%;
+}
+
+/* 10 首歌的列表位置 */
+#retained.list {
+ margin-left: var(--recommendation-offset);
+  margin-top: 12px;   /* 与上方标题的距离 */
+}
+
+#retained.list .song {
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+/* 关键词恢复边框 */
+#soundTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+#soundTags span {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 3px 9px;
+  border: 1px solid #dafa8828;
+  border-radius: 20px;
+  color: #c9d6ad;
+  background: transparent;
+}
+
+/* 去掉关键词之间的点 */
+#soundTags span + span::before {
+  content: none;
+}
+
+/* 保留推荐文字上方的空隙 */
+#suggestion #reason {
+  margin-top: 24px;
+}
+/* 去掉 WHY THIS TRACK 整块的外边框，保留背景 */
+#suggestion {
+  border: none;
+}
+
+:root {
+  --accent: #dafa88;
+}
+
+/* 标题保持主色 */
+#suggestion .eyebrow {
+  color: var(--accent);
+}
+
+/* 播放进度条 */
+#progress {
+  background: var(--accent);
+}
+
+/* 关键词更淡、更偏灰 */
+#soundTags span {
+  color: color-mix(in srgb, var(--accent) 30%, #94999f);
+  border-color: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+#reviewSource {
+  color: #b8bdc4b7; /* 平时：灰白色 */
+  transition: color 0.2s ease;
+}
+
+#reviewSource:hover,
+#reviewSource:focus-visible {
+  color: color-mix(in srgb, var(--accent) 30%, #94999f); /* 悬停：绿色 */
+}
+
+/* 三栏：中间唱片稍微放大 */
+.space {
+  --record-size: 300px;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    var(--record-size)
+    minmax(0, 1fr);
+
+  align-items: start;
+}
+
+/* 只放大唱片，歌名和按钮不跟着放大 */
+.player {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+}
+
+.record {
+  width: var(--record-size);
+  grid-column: 1 / -1;
+}
+
+.player > h1,
+.player > .artist,
+.player > .progress,
+.player > .time {
+  grid-column: 1 / -1;
+}
+
+/* 上一首 / 下一首与喜欢 / 收藏放在同一排 */
+#transport {
+  grid-column: 2;
+  grid-row: 4;
+  margin: 16px 0 0;
+  gap: 12px;
+}
+
+#feedback {
+  grid-column: 3;
+  grid-row: 4;
+  margin: 16px 0 0 12px;
+  gap: 12px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* Act 模式没有切歌按钮，喜欢和收藏单独居中 */
+body[data-mode="3"] #feedback {
+  grid-column: 2 / 4;
+  margin-left: 0;
+  justify-content: center;
+}
+
+/* 两侧与唱片保持相同距离 */
+.space {
+  column-gap: 120px;
+}
+
+/* 两侧的上下布局 */
+.space > .side {
+  height: var(--record-size);
+  min-height: 0;
+  margin-block: 0;
+  padding-block: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+}
+
+/* 左侧内容朝唱片靠拢 */
+#suggestion,
+#queue {
+  width: 100%;
+  max-width: 285px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* 右侧内容朝唱片靠拢 */
+#retainedLabel,
+#retained.list {
+  width: 100%;
+  max-width: 285px;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* 保留列表滚动 */
+.space > .side > #retained,
+.space > .side > #queue {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.space > .side > #retainedLabel {
+  flex-shrink: 0;
+}
+
+/* 窄屏：唱片在上，两侧内容在下 */
+@media (max-width: 760px) {
+  .space {
+    --record-size: min(320px, 80vw);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .player {
+    width: var(--record-size);
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 10px auto;
+  }
+
+  .space > .side {
+    height: auto;
+    justify-content: flex-start;
+  }
+}
+
+/* 桌面：两侧独立微调 */
+@media (min-width: 761px) {
+  .space > .side:first-child {
+    /* 左侧：WHY THIS TRACK / UP NEXT */
+    --move-x: -20px;
+    --move-y: 100px;
+
+    position: relative;
+    left: var(--move-x);
+    top: var(--move-y);
+  }
+
+  .space > .side:last-child {
+    /* 右侧：推荐歌曲和标题 */
+    --move-x: 0px;
+    --move-y: 50px;
+
+    position: relative;
+    left: var(--move-x);
+    top: var(--move-y);
+  }
+}
+
+/* 歌手名字下方留白 */
+.player > .artist {
+  margin-bottom: 18px;
+}
+
+/* 5 首及以下全部展开，不出现滚动条 */
+.space > .side > #retained.list.expanded {
+  max-height: none;
+  min-height: auto;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+/* 只把 WHY THIS TRACK 向左移动 */
+@media (min-width: 761px) {
+  #suggestion {
+    position: relative;
+    left: -20px;
+  }
+}
+
+/* 唱片下方留白，歌名和下面的按钮一起下移 */
+.player > h1 {
+  margin-top: 32px;
+}
+
+/* 顶部 DEMO 标题与整个音乐区域拉开距离 */
+main {
+  padding-top: 80px;
+}
+
+/* controller 与上方音乐区域拉开距离 */
+.controller {
+  margin-top: 30px;
+}
+
+/* 去掉唱片中心的小孔 */
+.recordHole {
+  display: none;
+}
+
+.queueRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.queueMarker {
+  width: 14px;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--accent, #dafa88);
+}
+
+.queueRow > .song {
+  flex: 1;
+  min-width: 0;
+}
+
+.queueRow.is-current .song b {
+  color: var(--accent, #dafa88);
+}
+
+/* 切歌时不再重播卡片入场动画 */
+#queueSongs .song,
+#retained .song {
+  animation: none;
+}
+
+/* 播放标记平滑显隐 */
+.queueMarker {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.queueRow.is-current .queueMarker {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 当前歌曲文字平滑变色 */
+.queueRow .song b {
+  transition: color 0.2s ease;
+}
+
+/* Keep selected-value spacing without displaying the text. */
+#historyValue, #agencyValue, #memoryValue {
+  visibility: hidden;
+  height: 40px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.controller .control label { min-height: 0; }
+
+/* Five labels follow the five slider positions rather than equal-width text boxes. */
+#history + .ticks { display: block; position: relative; height: 20px; margin-inline: 8px; }
+#history + .ticks span { position: absolute; white-space: nowrap; width: auto; text-align: center; transform: translateX(-50%); }
+#history + .ticks span:nth-child(1) { left: 0; transform: none; }
+#history + .ticks span:nth-child(2) { left: 25%; }
+#history + .ticks span:nth-child(3) { left: 50%; }
+#history + .ticks span:nth-child(4) { left: 75%; }
+#history + .ticks span:nth-child(5) { right: 0; transform: none; }
+
+/* 时间范围说明：独立于音乐标签 */
+#suggestion .tasteContext {
+  margin-top: 9px;
+  color: #c5c8cc;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+#suggestion .tasteContext + #soundTags { margin-top: 12px; }
+#reviewSource[hidden], #reason[hidden] { display: none; }
+
+.onboarding{max-width:680px;margin:0 auto;padding:clamp(64px,12vh,130px) 24px 60px}.onboarding h1{font-size:clamp(32px,5vw,48px);font-weight:450;margin:20px 0;line-height:1.15}.onboarding p{color:#9da5ae;max-width:540px}.languageFields{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:36px 0 20px}.languageFields label{display:block;font-size:13px;color:#c4cbd2}.languageFields select{display:block;width:100%;margin-top:10px;background:#1c2127;color:#edf0e9;border:1px solid #424951;border-radius:10px;padding:15px 12px;font:inherit}.languageFields select:focus-visible{outline:2px solid #dafa88;outline-offset:3px}.onboarding .enter{background:#dafa88;color:#171d12;padding:13px 24px;border-radius:28px;margin-top:24px;font-weight:600}.onboarding .enter:disabled{opacity:.4;cursor:not-allowed}.onboarding .setupNote{font-size:13px;min-height:40px;color:#b6bda7}.profileBar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 20px;color:#aeb8a3;font-size:12px}.profileBar button{border:1px solid #454b52;border-radius:24px;padding:6px 12px;font-size:12px;white-space:nowrap}#catalogNotice{font-size:12px;color:#abb0a3;margin:0 0 20px;max-width:700px}@media(max-width:520px){.languageFields{grid-template-columns:1fr}.onboarding{padding-top:44px}}
+
+/* The mark leads into the language drawer; hover only moves its dot. */
+header{justify-content:space-between}.languageLogo{position:relative;display:block;width:64px;height:40px;padding:4px;border-radius:24px;background:#cbc9df;flex:none;z-index:1}.languageLogo .logoDot{display:block;width:32px;height:32px;border-radius:50%;background:#fff;transform:translateX(0);transition:transform .32s cubic-bezier(.22,1,.36,1);box-shadow:0 1px 3px #6e69851a}.languageLogo:hover .logoDot,.languageLogo:focus-visible .logoDot,.languageLogo[aria-expanded="true"] .logoDot{transform:translateX(24px)}
+.entryLanding{min-height:65vh;display:grid;place-content:center;text-align:center;padding:40px 24px}.entryLanding h1{font-size:clamp(30px,4vw,48px);font-weight:400;margin:0 0 14px}.entryLanding p{color:#929aa5;font-size:14px;margin:0}.entryLanding .eyebrow{color:#cbc9df;margin-bottom:20px}
+.onboarding{position:fixed;inset:0 auto 0 0;width:clamp(360px,33.333vw,620px);max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:110px clamp(24px,3vw,48px) 40px;border:0;border-right:1px solid #cbc9df25;background:#191b22;color:#f0f0ed;overflow-y:auto;transform:translateX(-100%);opacity:0;transition:transform .44s cubic-bezier(.22,1,.36,1),opacity .2s;box-shadow:20px 0 80px #0005}.onboarding.is-open{transform:translateX(0);opacity:1}.onboarding::backdrop{background:#080a10a6;backdrop-filter:blur(4px)}.onboarding h1{font-size:clamp(30px,3vw,42px);margin-top:24px}.onboarding .eyebrow{color:#cbc9df}.onboarding p{font-size:14px;line-height:1.8}.onboarding .languageFields{grid-template-columns:1fr;gap:24px;margin-top:32px}.onboarding .enter{background:#cbc9df;width:100%;color:#20202a}.onboarding .setupNote{font-size:12px;color:#a6a5b8}.onboarding select:focus-visible{outline-color:#cbc9df}.closeChoosing{position:absolute;top:25px;right:24px;width:40px;height:40px;border:1px solid #ffffff24;border-radius:50%;font-size:25px;line-height:1;color:#c9c8d8}.drawerMark{position:absolute;top:28px;left:clamp(24px,3vw,48px);width:54px;height:34px;border-radius:22px;background:#cbc9df}.drawerMark:after{content:"";position:absolute;right:4px;top:4px;width:26px;height:26px;background:white;border-radius:50%}body.choosingOpen{overflow:hidden}@media(max-width:600px){.onboarding{width:100%;padding-top:100px}.languageLogo{width:58px;height:36px}.languageLogo .logoDot{width:28px;height:28px}.languageLogo:hover .logoDot,.languageLogo:focus-visible .logoDot,.languageLogo[aria-expanded="true"] .logoDot{transform:translateX(22px)}}@media(prefers-reduced-motion:reduce){.onboarding,.languageLogo .logoDot{transition:none}}
+
+/* Only the small entry button remains when the panel is closed. */
+.controllerEntry{position:fixed;right:clamp(20px,4vw,56px);bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:20}.controllerEntry button{min-width:38px;height:38px;padding:0 12px;display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid #454b52;border-radius:28px;color:#aeb8a3;background:#101216;box-shadow:0 6px 24px #0005;transition:background .2s,color .2s}.controllerEntry button svg{display:block;flex:none;width:18px;height:18px}.controllerEntry button span{font-size:11px;letter-spacing:.5px}.controllerEntry button:hover,.controllerEntry button[aria-expanded="true"]{background:#ffffff0d;color:#c7cdd4}main#experience{padding-bottom:100px}#controllerPanel .controllerHead{margin-bottom:18px}#closeController{font-size:25px;line-height:1;width:36px;height:36px;border-radius:50%;color:#434b50}#closeController:hover{background:#0000000d}
+
+/* Anchor the expanded controller close to the viewport's bottom edge. */
+#controllerPanel{position:fixed;left:4%;right:4%;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:1325px;margin:0 auto;z-index:30;max-height:calc(100dvh - 100px);overflow-y:auto;box-shadow:0 -12px 48px #0005}#controllerPanel .controllerHead{margin-bottom:12px}@media(max-width:760px){#controllerPanel{left:12px;right:12px;max-height:70dvh;padding:16px 20px}#controllerPanel .controls{gap:14px}#controllerPanel .control+.control{padding-top:14px}}
+
+/* One capsule appearance and edge alignment in both states. */
+:root{--capsule-edge:clamp(16px,2vw,28px);--capsule-top:27px}
+header{margin-left:var(--capsule-edge)}
+header .languageLogo,.onboarding .drawerMark{width:46px;height:28px;padding:3px;border:1px solid #454b52;border-radius:999px;background:#101216;box-shadow:none}
+header .languageLogo .logoDot{width:20px;height:20px;background:#aeb8a3;box-shadow:none}
+header .languageLogo:hover .logoDot,header .languageLogo:focus-visible .logoDot,header .languageLogo[aria-expanded="true"] .logoDot{transform:translateX(18px)}
+.onboarding .drawerMark{left:var(--capsule-edge);top:var(--capsule-top)}
+.onboarding .drawerMark:after{width:20px;height:20px;top:3px;right:3px;background:#aeb8a3;box-shadow:none}
+@media(max-width:760px){:root{--capsule-top:23px}}
+
+/* Let the drawer and its scrim settle together, without an abrupt fade-out. */
+.onboarding{transform:translate3d(-102%,0,0);opacity:1;transition:transform .52s cubic-bezier(.22,.8,.25,1)}
+.onboarding.is-open{transform:translate3d(0,0,0);opacity:1}
+.onboarding::backdrop{background:#080a1099;backdrop-filter:blur(4px);opacity:0;transition:opacity .52s cubic-bezier(.22,.8,.25,1)}
+.onboarding.is-open::backdrop{opacity:1}
+header .languageLogo{transition:opacity .22s ease}
+body.choosingOpen header .languageLogo{opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.onboarding,.onboarding::backdrop,header .languageLogo{transition:none}}
+
+/* Passive level indicator above the original native slider. */
+#agencyValue{display:none}
+.actionWedge{width:100%;height:36px;margin:20px 0 10px;pointer-events:none}
+.actionWedge svg{display:block;width:100%;height:100%;overflow:visible}
+.actionWedge polygon{fill:transparent;stroke:#939894;stroke-width:1.2;vector-effect:non-scaling-stroke;transition:fill .18s ease,stroke .18s ease}
+.actionWedge polygon.active{fill:#595d57;stroke:#595d57}
+@media(prefers-reduced-motion:reduce){.actionWedge polygon{transition:none}}
+
+/* Keep the original spacing without a separate controller title row. */
+#controllerPanel #closeController{position:absolute;top:8px;right:8px;width:28px;height:28px;font-size:22px}
+
+/* Discrete memory range, with the original five-position slider retained. */
+#historyValue{display:none}
+.memoryBlocks{display:grid;grid-template-columns:repeat(32,minmax(0,1fr));gap:3px;height:26px;margin:20px 0 20px;align-items:stretch}
+.memoryBlocks span{border:1px solid #93989466;border-radius:1px;background:transparent;transition:background .18s ease,border-color .18s ease}
+.memoryBlocks span.filled{background:var(--memory-shade);border-color:var(--memory-shade)}
+.memoryEndpoints{display:flex;justify-content:space-between;color:#5c666c;font-size:12px}
+@media(prefers-reduced-motion:reduce){.memoryBlocks span{transition:none}}
+
+/* The chosen song stays central while retained alternatives sit beside it. */
+#memoryValue{display:none}
+.keptDiagram{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:center;gap:10px;height:36px;margin:20px 0 10px}
+.chosenBlock{width:24px;height:24px;background:#454941;border-radius:50%}
+.keptSide{display:flex;align-items:center;gap:0;min-width:0}
+#keptLeft{justify-content:flex-end}
+#keptRight{justify-content:flex-start}
+.keptBlock{display:block;position:relative;flex:0 1 0px;width:0;min-width:0;height:20px;transition:flex-basis .42s cubic-bezier(.22,1,.36,1),width .42s cubic-bezier(.22,1,.36,1),margin .42s cubic-bezier(.22,1,.36,1);transition-delay:.1s}
+.keptBlock::after{content:"";position:absolute;left:50%;top:0;width:20px;height:20px;box-sizing:border-box;border:1.5px solid #858981;border-radius:50%;background:transparent;opacity:0;transform:translateX(-50%) scale(.65);transition:opacity .24s ease,transform .32s cubic-bezier(.22,1,.36,1)}
+.keptBlock.is-kept{flex-basis:20px;width:20px;transition-delay:0s}
+.keptBlock.is-kept::after{opacity:1;transform:translateX(-50%) scale(1);transition-delay:.08s}
+#keptLeft .keptBlock.is-kept{margin-left:10px}
+#keptRight .keptBlock.is-kept{margin-right:10px}
+@media(prefers-reduced-motion:reduce){.keptBlock,.keptBlock::after{transition:none;transition-delay:0s}}
+
+/* A single prominent queue to the right of the record. */
+.space>.side.playlistSide{height:auto;min-height:0;top:0;left:0;justify-content:flex-start;align-self:start}
+.playlistSide #queue{width:100%;max-width:none;margin:0;overflow:visible}
+.playlistSide .rightLabel{margin:0 0 16px 24px;font-size:12px;letter-spacing:2px;color:#b5bdc5}
+#queueSongs{display:flex;flex-direction:column;gap:6px;max-height:none;overflow:visible}
+#queueSongs .queueRow{min-height:64px;gap:10px;border-radius:8px;padding:3px 0}
+#queueSongs .queueMarker{width:14px;font-size:12px}
+#queueSongs .song{padding:0;gap:14px;border:0;min-width:0;text-align:left}
+#queueSongs .mini{width:54px;height:54px;border-radius:3px}
+#queueSongs .songText{flex:1}
+#queueSongs .song b{font-size:15px;font-weight:550;line-height:1.4}
+#queueSongs .song small{display:block;font-size:12px;line-height:1.5;margin-top:4px;color:#969fa9}
+#queueSongs .song.pickable{pointer-events:auto;border-radius:5px;transform:none}
+#queueSongs .song.pickable:hover{background:#ffffff08;transform:none}
+#queueSongs .queueRow.is-current{background:#ffffff04}
+@media(min-width:761px){.space{column-gap:clamp(36px,6vw,100px);grid-template-columns:minmax(0,1fr) var(--record-size) minmax(300px,1.15fr)}}
+@media(min-width:761px) and (max-width:1000px){.space{column-gap:24px;grid-template-columns:minmax(0,1fr) 260px minmax(240px,1fr);--record-size:260px}#queueSongs .mini{width:48px;height:48px}#queueSongs .song b{font-size:14px}}
+@media(max-width:760px){.space>.side.playlistSide{grid-column:1/-1;width:100%;margin-top:12px}.playlistSide #queue{max-height:none}#queueSongs .queueRow{min-height:64px}}
+
+/* Queue on the left, with the original alternatives-sized artwork. */
+#queueSongs .mini{width:44px;height:44px}
+#queueSongs .queueRow{min-height:56px;padding:3px 0}
+#queueSongs .song{gap:12px}
+#queueSongs .song b{font-size:14px;font-weight:500}
+#queueSongs .song small{font-size:12px;margin-top:2px}
+.space>.side.suggestionSide{top:50px;left:0}
+.suggestionSide #suggestion{left:0;margin-left:0;margin-right:auto}
+@media(min-width:761px){.space{grid-template-columns:minmax(280px,1.15fr) var(--record-size) minmax(0,1fr)}}
+@media(min-width:761px) and (max-width:1000px){.space{grid-template-columns:minmax(240px,1fr) 260px minmax(0,1fr)}}
+@media(max-width:760px){.space>.side.playlistSide{grid-column:1;grid-row:2;margin-top:0}.space>.side.suggestionSide{grid-column:2;grid-row:2;top:0}#queueSongs .song b{font-size:13px}}
+@media(max-width:520px){.space>.side.playlistSide{grid-column:1/-1}.space>.side.suggestionSide{grid-column:1/-1;grid-row:3}}
+
+/* Bring the left queue inward while leaving the record in its current column. */
+@media(min-width:761px){.space>.side.playlistSide{padding-left:clamp(24px,3vw,44px)}.playlistSide #queue{max-width:300px;margin-left:auto;margin-right:0}}
+@media(max-width:760px){.space>.side.playlistSide{grid-column:1/-1}}
+
+/* Slightly larger desktop record; keep all other sizes unchanged. */
+@media(min-width:1001px){.space{--record-size:320px}}
+
+.queueHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;height:30px;min-height:30px;flex-shrink:0}
+#shuffleQueue{width:30px;height:30px;padding:5px;display:grid;place-items:center;border-radius:50%;color:#aeb8a3}
+#shuffleQueue:hover{background:#ffffff0b;color:#dafa88}
+#shuffleQueue:disabled,.transport button:disabled{opacity:.35;cursor:default}
+#queueSongs .reorderHandle{width:26px;min-width:26px;height:40px;padding:0;color:#89929b;font-size:23px;cursor:grab;touch-action:none;border-radius:5px}
+#queueSongs .reorderHandle:hover{color:#dafa88;background:#ffffff08}
+#queueSongs .queueRow.dragging{opacity:.55}
+#queueSongs .queueRow.dropTarget{box-shadow:inset 0 -2px #dafa88;background:#dafa8809}
+#queueSongs .queueRow{transition:background .2s ease,opacity .2s ease}
+@media(prefers-reduced-motion:reduce){#queueSongs .queueRow{transition:none}}
+
+#queueSongs .queueRow.reorderable,#queueSongs .queueRow.reorderable .song{cursor:grab;touch-action:pan-x;user-select:none}
+#queueSongs .queueRow.reorderable:hover{background:#ffffff08}
+#queueSongs .queueRow.dragging,#queueSongs .queueRow.dragging *{cursor:grabbing!important}
+#queueSongs .queueRow.reorderable img{-webkit-user-drag:none;user-select:none}
+
+/* Highlight the drag handle whenever its entire song row is hovered. */
+#queueSongs .queueRow.reorderable:hover .reorderHandle,
+#queueSongs .queueRow.reorderable:focus-within .reorderHandle,
+#queueSongs .queueRow.dragging .reorderHandle{color:#dafa88}
+#queueSongs .reorderHandle{transition:color .18s ease,background .18s ease}
+#queueSongs .queueRow.reorderable:hover,
+#queueSongs .queueRow.reorderable:hover .song,
+#queueSongs .queueRow.reorderable:hover .reorderHandle{cursor:grab}
+@media(prefers-reduced-motion:reduce){#queueSongs .reorderHandle{transition:none}}
+
+/* Hover belongs to the whole queue row, not to nested song/handle buttons. */
+#queueSongs .queueRow:hover{background:#ffffff08}
+#queueSongs .queueRow .song.pickable:hover,
+#queueSongs .queueRow .song.pickable:focus-visible,
+#queueSongs .queueRow .reorderHandle:hover{background:transparent;border-color:transparent;box-shadow:none;transform:none}
+
+/* The complete song row follows the pointer and settles into its new slot. */
+#queueSongs .queueRow{position:relative}
+#queueSongs .queueRow.dragging{z-index:5;opacity:1;background:#2c3138;box-shadow:0 12px 30px #0005;transition:none;will-change:transform}
+
+/* Leave a little more space between the desktop playlist and record. */
+@media(min-width:761px){.space>.side.playlistSide{left:-96px;top:16px}}
+
+/* Keep the queue viewport steady while songs travel upward on advance. */
+#queueSongs{position:relative;isolation:isolate;overflow:hidden}
+#queueSongs .queueExit{position:absolute;top:0;left:0;right:0;margin:0;pointer-events:none;z-index:2}
+
+/* Third-level queue is visible but read-only, without interactive hover cues. */
+body[data-mode="2"] #queueSongs .queueRow:hover{background:transparent;cursor:default}
+body[data-mode="2"] #queueSongs .queueRow.is-current:hover{background:#ffffff04}
+
+/* Enlarge only the desktop disc, preserving its original layout footprint. */
+@media(min-width:1001px){.player>.record{width:340px;height:340px;margin-bottom:-20px;position:relative;left:0;top:-32px;justify-self:center}}
+
+/* Six retained discoveries trace an invisible arc beside the record. */
+.alternativesSide{position:relative;align-self:start;min-width:0;height:440px;top:-32px}
+.alternativesArc{position:relative;width:100%;height:100%}
+.alternativeOrb{position:absolute;left:var(--orb-x);top:var(--orb-y);width:44px;height:44px;transform:translate(-50%,-50%);z-index:1;cursor:default;outline:none}
+.alternativeArt{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;overflow:hidden;background:#343a3b;box-shadow:0 0 0 1px #ffffff18;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease}
+.alternativeArt img{width:100%;height:100%;object-fit:cover;display:block}
+.alternativeOrb:hover,.alternativeOrb:focus{z-index:4}
+.alternativeOrb:hover .alternativeArt,.alternativeOrb:focus .alternativeArt{transform:scale(1.18);box-shadow:0 0 0 2px #dafa8860,0 8px 24px #0005}
+.alternativeInfo{position:absolute;right:calc(100% + 16px);top:50%;width:max-content;max-width:210px;padding:12px 15px;border-radius:9px;background:#20252bf5;box-shadow:0 8px 24px #0004;opacity:0;visibility:hidden;transform:translate(5px,-50%);transition:opacity .2s ease,transform .2s ease,visibility .2s;pointer-events:none}
+.alternativeInfo b,.alternativeInfo>span,.alternativeInfo small{display:block;white-space:normal;overflow-wrap:anywhere}
+.alternativeInfo b{font-size:13px;font-weight:550;color:#edf0e9;line-height:1.4}
+.alternativeInfo>span{font-size:12px;color:#aab2bb;margin-top:4px}
+.alternativeInfo small{font-size:11px;color:#85917e;margin-top:3px}
+.alternativeOrb:hover .alternativeInfo,.alternativeOrb:focus .alternativeInfo{opacity:1;visibility:visible;transform:translate(0,-50%)}
+@media(min-width:761px) and (max-width:1000px){.alternativesSide{height:400px}.alternativeOrb{left:calc(var(--orb-x) * .8)}}
+@media(max-width:760px){.alternativesSide{grid-column:1/-1;grid-row:3;width:min(300px,100%);height:400px;top:0;justify-self:center;margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.alternativeArt,.alternativeInfo{transition:none}}
+
+/* Scrollable, widely spaced discoveries with right-opening information cards. */
+.alternativesSide{height:440px}
+.alternativesArc{overflow-y:auto;overflow-x:hidden;scrollbar-width:none;overscroll-behavior-y:contain;touch-action:pan-y}
+.alternativesArc::-webkit-scrollbar{display:none}
+.arcSpacer{width:1px;pointer-events:none}
+.alternativeOrb,.alternativeArt{width:56px;height:56px}
+.alternativeOrb{transition:opacity .18s ease}
+.alternativeArt{position:relative;z-index:2}
+.alternativeOrb:hover .alternativeArt,.alternativeOrb:focus .alternativeArt{transform:scale(1.1)}
+.alternativeInfo{right:auto;left:calc(100% + 10px);width:var(--info-width,146px);max-width:146px;min-height:64px;padding:10px 12px;border:1px solid #ffffff10;border-radius:12px;background:#24292ff5;transform:translate(-8px,-50%);transform-origin:left center}
+.alternativeOrb:hover .alternativeInfo,.alternativeOrb:focus .alternativeInfo{transform:translate(0,-50%)}
+@media(max-width:1000px){.alternativesSide{grid-column:1/-1;grid-row:3;width:min(380px,100%);height:440px;top:0;justify-self:center;margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.alternativeOrb{transition:none}}
+
+/* A connected pill behind the cover, with white track text and no actions. */
+.alternativeInfo{left:16px;right:auto;width:calc(var(--info-width,146px) + 50px);max-width:none;min-height:64px;padding:12px 16px 12px 50px;border:1px solid #ffffff12;border-radius:999px;background:#252a30;box-shadow:0 5px 18px #0003;transform:translate(-6px,-50%) scaleX(.97)}
+.alternativeInfo b{color:#fff;font-size:13px;font-weight:550;line-height:1.4}
+.alternativeInfo>span{color:#fff;font-size:12px;line-height:1.4;margin-top:3px}
+.alternativeOrb:hover .alternativeInfo,.alternativeOrb:focus .alternativeInfo{transform:translate(0,-50%) scaleX(1)}
+.alternativesArc{scroll-behavior:auto;-webkit-overflow-scrolling:touch}
+
+.alternativesSide{display:flex;flex-direction:column}
+.alternativesHeading{flex:none;font-size:12px;line-height:1.6;letter-spacing:1.2px;color:#b5bdc5;margin:0 0 16px 24px}
+.alternativesArc{flex:1;min-height:0;height:auto}
+.alternativeOrb,.alternativeArt{width:52px;height:52px}
+.alternativeInfo{border:0;min-height:60px;padding-top:10px;padding-bottom:10px}
+
+.alternativesSide{top:16px}
+.alternativesHeading{height:30px;min-height:30px;display:flex;align-items:center;margin-bottom:16px;font-size:12px;letter-spacing:2px;white-space:nowrap}
+.arcScrollControls{position:absolute;right:0;top:calc(50% - 6px);display:flex;flex-direction:column;gap:12px;z-index:6}
+.arcScrollControls button{width:26px;height:28px;padding:4px;display:grid;place-items:center;color:#aeb8a3;border-radius:6px}
+.arcScrollControls button:hover{background:#ffffff0b;color:#dafa88}
+.arcScrollControls button:disabled{opacity:.25;cursor:default}
+.alternativesArc{scroll-snap-type:none}
+@media(max-width:1000px){.alternativesSide{top:0}.alternativesHeading{font-size:11px;letter-spacing:1px}}
+
+/* Exactly two lines in each expanded song card. */
+.alternativeInfo b,.alternativeInfo>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal}
+.alternativeInfo{height:60px;min-height:60px;display:flex;flex-direction:column;justify-content:center}
+.alternativeInfo b,.alternativeInfo>span{flex:none}
+
+/* Preserve the five-song viewport while removing its heading. */
+.alternativesSide{height:394px}
+@media(max-width:1000px){.alternativesSide{height:394px}}
+
+/* Four-song orbit with its navigation alongside the heading. */
+.alternativesSide{height:370px}
+.alternativesHeader{display:flex;align-items:center;gap:10px;flex:none;height:30px;margin:0 0 14px 24px;color:#b5bdc5;font-size:12px;letter-spacing:2px;white-space:nowrap}
+.alternativesHeader .arcScrollControls{position:static;display:flex;flex-direction:row;gap:2px}
+.alternativesHeader .arcScrollControls button{width:23px;height:28px}
+@media(max-width:1000px){.alternativesSide{height:370px}.alternativesHeader{font-size:11px;letter-spacing:1.5px}}
+
+/* Offset the desktop orbit without changing the central player's layout. */
+@media(min-width:1001px){.alternativesSide{left:80px}}
+
+/* Sentence-led language selection inspired by the outlined-pill reference. */
+.onboarding{width:min(1000px,94vw);padding:clamp(90px,14vh,150px) clamp(28px,5vw,72px) 52px;background:#101214;border-right:1px solid #ffffff10}
+.preferenceSentence{display:flex;flex-wrap:wrap;align-items:center;gap:16px 14px}
+.onboarding .preferenceSentence h1,.sentenceEnd{font-size:clamp(36px,4.4vw,60px);line-height:1.15;letter-spacing:-1.8px;font-weight:550;color:#fafaf7;margin:0;max-width:none}
+.languagePills{display:contents}
+.languagePill{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:10px 22px;border:2px solid #eeefea;border-radius:999px;background:transparent;color:#fff;font-size:clamp(18px,2vw,26px);line-height:1.2;white-space:nowrap;transition:color .2s,background .2s,border-color .2s,opacity .2s}
+.languagePill>span{font-size:.78em;color:#b9bcb7;font-weight:450}
+.languagePill:hover:not(:disabled){background:#ffffff0c}
+.languagePill[aria-pressed="true"],.languagePill[aria-pressed="true"]:hover{background:#f5f6f2;color:#15181b;border-color:#f5f6f2}
+.languagePill[aria-pressed="true"]>span{color:#555a55}
+.languagePill:disabled{opacity:.35;cursor:default}
+.languagePill:focus-visible{outline:2px solid #dafa88;outline-offset:5px}
+.onboarding .languageHelp{font-size:18px;line-height:1.6;color:#bfc3ba;margin:42px 0 10px;max-width:none}
+.onboarding .setupNote{font-size:12px;color:#858d83;max-width:640px;min-height:36px;margin:0}
+.onboarding .enter{width:auto;min-height:56px;margin-top:28px;padding:14px 28px;border-radius:999px;background:#dafa88;color:#171d12;font-size:18px;font-weight:600;display:inline-flex;align-items:center;gap:14px}
+.onboarding .enter:hover:not(:disabled){background:#e5ff9f}
+.onboarding .closeChoosing{color:#bfc3ba;border-color:#ffffff24}
+@media(max-width:600px){.onboarding{width:100vw;padding:92px 24px 36px}.preferenceSentence{gap:12px 10px}.onboarding .preferenceSentence h1,.sentenceEnd{font-size:36px;letter-spacing:-1px}.languagePill{font-size:17px;min-height:44px;padding:9px 15px;gap:8px}.onboarding .languageHelp{font-size:15px;margin-top:30px}.onboarding .enter{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.languagePill{transition:none}}
+
+/* Preserve the original drawer footprint regardless of its contents. */
+.onboarding{width:clamp(360px,33.333vw,620px);max-width:100vw;padding:110px clamp(24px,3vw,48px) 40px}
+.onboarding .preferenceSentence h1,.sentenceEnd{font-size:26px;letter-spacing:-.5px}
+.preferenceSentence{gap:12px 10px}
+.languagePill{font-size:17px;min-height:44px;padding:9px 15px;gap:8px}
+.onboarding .languageHelp{font-size:15px;margin-top:30px}
+.onboarding .enter{font-size:16px;min-height:50px;padding:12px 24px}
+@media(max-width:600px){.onboarding{width:100%;padding:100px 24px 36px}}
+
+/* Language picker colors — edit these values to tune the unselected pills. */
+:root{
+ --language-text:#6b716c; /* 未选中文字 */
+ --language-border:#6b716c; /* 未选中边框 */
+ --language-glyph:#6b716c; /* 左侧语言符号 */
+}
+/* Muted choices; pure white is reserved for the selected language. */
+.languagePill{color:var(--language-text);border-color:var(--language-border)}
+.languagePill>span{color:var(--language-glyph)}
+.languagePill:hover:not(:disabled):not([aria-pressed="true"]){color:#a2a8a3;border-color:#a2a8a3;background:#ffffff06}
+.languagePill[aria-pressed="true"],.languagePill[aria-pressed="true"]:hover{background:#fff;border-color:#fff;color:#15181b}
+.languagePill[aria-pressed="true"]>span{color:#555a55}
+
+/* Fine, subdued outlines for unselected language choices. */
+.languagePill{border-width:1px;border-color:var(--language-border)}
+.languagePill:hover:not(:disabled):not([aria-pressed="true"]){border-color:#a2a8a3}
+.languagePill:hover:not([aria-pressed="true"])>span{color:inherit}
+.languagePill[aria-pressed="true"],.languagePill[aria-pressed="true"]:hover{border-color:#fff}
+
+/* Compact pills align with the sentence's 30px line box. */
+.onboarding .preferenceSentence h1,.onboarding .sentenceEnd{font-size:30px;line-height:34px}
+.onboarding .languagePill{min-height:32px;height:32px;padding:4px 13px;font-size:16px;font-weight:600;line-height:22px;gap:7px}
+.onboarding .languagePill>span{font-weight:450}
+
+/* Lower the selection content and give the instruction its own breathing room. */
+.onboarding #languageForm{padding-top:56px}
+.onboarding .languageHelp{margin-top:48px;margin-bottom:0}
+.onboarding .enter{margin-top:48px}
+
+/* Center the content block, keeping its internal left-aligned composition. */
+.onboarding #languageForm{width:100%;max-width:360px;margin-inline:auto;text-align:left}
+
+/* Render at the intended 80% size using responsive layout, without zoom overflow. */
+.onboarding{padding-top:clamp(64px,14dvh,110px);padding-inline:clamp(20px,3vw,48px);overflow-x:hidden}
+.onboarding #languageForm{width:100%;max-width:400px;min-width:0;margin-inline:auto;zoom:1;padding-top:clamp(16px,6dvh,44.8px)}
+.onboarding .preferenceSentence{gap:9.6px 8px;min-width:0}
+.onboarding .preferenceSentence h1,.onboarding .sentenceEnd{font-size:24px;line-height:27.2px;letter-spacing:-.4px}
+.onboarding .sentenceEnd{white-space:nowrap}
+.onboarding .languagePill{min-height:25.6px;height:25.6px;max-width:100%;padding:3.2px 10.4px;font-size:12.8px;line-height:17.6px;gap:5.6px;border-width:.8px}
+.onboarding .languageHelp{font-size:12px;line-height:1.6;margin-top:38.4px;margin-bottom:0;max-width:100%}
+.onboarding .enter{font-size:12.8px;min-height:40px;padding:9.6px 19.2px;margin-top:38.4px;gap:11.2px;max-width:100%;white-space:normal}
+@media(max-width:600px){.onboarding{width:100%;padding-inline:20px}}
+@media(max-height:600px){.onboarding #languageForm{padding-top:12px}.onboarding .languageHelp,.onboarding .enter{margin-top:26px}}
+.demoIdentity::after{content:"";display:block;height:20px}
+
+/* Move the music stage together; fixed controls keep their viewport anchor. */
+body > header, #experience > .space, #experience > .foot, #catalogNotice{
+ translate:0 var(--music-stage-y,0px);
+ transition:translate .55s cubic-bezier(.22,1,.36,1);
+}
+@media(prefers-reduced-motion:reduce){
+ body > header, #experience > .space, #experience > .foot, #catalogNotice{transition:none}
+}
+</style></head><body><header><button type="button" class="languageLogo" id="languageLogo" aria-label="Choose your listening languages" aria-haspopup="dialog" aria-controls="onboarding" aria-expanded="false"><span class="logoDot" aria-hidden="true"></span></button><div class="demoIdentity"><div>DEMO 01 - MUSIC SELECTOR</div></div></header><dialog class="onboarding" id="onboarding" aria-labelledby="setupTitle"><button type="button" class="closeChoosing" id="closeChoosing" aria-label="Close language selection">×</button><form id="languageForm"><div class="preferenceSentence" role="group" aria-label="Long-term listening languages" aria-describedby="languageHelp"><h1 id="setupTitle" tabindex="-1">I mostly listen to</h1><span id="languagePills" class="languagePills"></span><span class="sentenceEnd">music.</span></div><p id="languageHelp" class="languageHelp">Pick one. This becomes your long-term listening preference.</p><div hidden><select id="firstLanguage"><option value="">Choose a language</option></select><select id="secondLanguage"><option value="">None — just one</option></select></div><button class="enter" id="enterExperience" type="submit" disabled>Enter experience <span aria-hidden="true">→</span></button></form></dialog><main id="experience"><p id="catalogNotice" hidden></p><section class="space"><aside class="side playlistSide"><div class="queue" id="queue" aria-label="Playback queue"><div class="rightLabel queueHeading"><span>UP NEXT</span><button type="button" id="shuffleQueue" aria-label="Shuffle upcoming tracks" title="Shuffle upcoming tracks" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c2 0 4-3 6-6s4-6 6-6h3m-4-4 4 4-4 4"/></svg></button></div><div id="queueSongs"></div></div></aside><div class="player"><button type="button" class="record" id="cover" aria-label="Play" aria-pressed="false" title="Play / pause"><span class="recordRotor" id="recordRotor"><img class="recordLabel" id="artwork" alt=""><span class="recordHole"></span></span><span class="recordControl" id="recordControl" aria-hidden="true"></span></button><h1 id="title">Slow Orbit</h1><div class="artist" id="artist">Haru • After Hours</div><div class="transport" id="transport"></div><div class="feedback" id="feedback" aria-label="Track actions"></div><div class="progress"><i id="progress"></i></div><div class="time"><span id="elapsed">0:00</span><span id="duration">Preview</span></div></div><aside class="alternativesSide" id="alternativesSide" aria-label="Retained alternatives"><div class="alternativesHeader"><span>ALSO CONSIDERED</span><div class="arcScrollControls"><button type="button" id="arcUp" aria-label="Scroll alternatives up" title="Scroll up"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button><button type="button" id="arcDown" aria-label="Scroll alternatives down" title="Scroll down"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div></div><div class="alternativesArc" id="alternativesArc"></div></aside></section><div class="controllerEntry"><button type="button" id="toggleController" aria-expanded="false" aria-controls="controllerPanel" aria-label="Show listening controller" title="Show listening controller"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h5m4 0h7M4 17h9m4 0h3"/><circle cx="11" cy="7" r="2"/><circle cx="15" cy="17" r="2"/></svg><span>Controls</span></button></div><section class="controller" id="controllerPanel" aria-label="Listening controller" hidden><button type="button" id="closeController" aria-label="Close listening controller" title="Close listening controller">×</button><div class="controls"><div class="control"><label for="history"><span></span>Reach of memory</label><div class="value" id="historyValue">1 year <small>History window</small></div><div class="memoryBlocks" id="memoryBlocks" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><input id="history" type="range" min="0" max="4" value="4" aria-label="History window"><div class="memoryEndpoints" aria-hidden="true"><span>Day</span><span>Year</span></div></div><div class="control"><label for="agency"><span></span>Reach of action</label><div class="value" id="agencyValue">Arrange, then let me reorder</div><div class="actionWedge" id="actionWedge"><svg viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true"><polygon data-action-step="0" points="1,59 97,45 97,59"/><polygon data-action-step="1" points="103,44 197,30 197,59 103,59"/><polygon data-action-step="2" points="203,29 297,15 297,59 203,59"/><polygon data-action-step="3" points="303,14 399,1 399,59 303,59"/></svg></div><input id="agency" type="range" min="0" max="3" step="1" value="0" aria-label="Reach of action"></div><div class="control"><label for="memory"><span></span>Alternatives kept</label><div class="value" id="memoryValue">0 tracks <small>Kept from this pass</small></div><div class="keptDiagram" id="keptDiagram" aria-hidden="true"><div class="keptSide" id="keptLeft"></div><span class="chosenBlock"></span><div class="keptSide" id="keptRight"></div></div><input id="memory" type="range" min="0" max="3" value="0" aria-label="Retained track count"></div></div></section><footer class="foot"><span id="status" aria-live="polite"></span></footer></main><script src="spotify-playback.js"></script><script>
+const tracks=[{"id": "4FXQTLl5v1jlaLvrp16mFk", "title": "trees for the woods", "artist": "Amie Blu", "duration": 247540, "preview": "https://p.scdn.co/mp3-preview/f9dc3f7cf6b9ca15472115b75fe4fce420eff9f8", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e022a88a7040ba03ab72c6f2434", "group": 0, "style": "indie-pop / alternative", "genres": ["indie-pop", "alternative"], "distance": 0, "languages": ["en"]}, {"id": "5RN5G04yIk7IWUugtRehSp", "title": "JUST WHEN IT'S OVER", "artist": "KAIRO", "duration": 203812, "preview": "https://p.scdn.co/mp3-preview/30893aafdb3831d1d69a6e4653afc50014d8bb99", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02b4de412906665459549668d3", "group": 0, "style": "pop / soul", "genres": ["pop", "soul"], "distance": 0, "languages": ["en"]}, {"id": "1jecO8NeYLsVWVptITz4c1", "title": "Tú", "artist": "maye", "duration": 206611, "preview": "https://p.scdn.co/mp3-preview/4f1e6bae11e44f944e2e0bebbc2e6f58356314e3", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e535e8147235d96bb734ba41", "group": 0, "style": "indie-pop / latin-pop", "genres": ["indie-pop", "latin-pop"], "distance": 0, "languages": ["es"]}, {"id": "5quJ9xU6fM1yPzfFIpJVZl", "title": "SMALL TOWN", "artist": "Dominic Fike, Gabriel Jacoby, Emma Ogier", "duration": 169981, "preview": "https://p.scdn.co/mp3-preview/d046fa703329fc3db660b05342dabb33767fd5ba", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e027a5456ace4c059df03b973ee", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["en"]}, {"id": "1AAs5m16OghJ0L7igINIup", "title": "Talk Is Cheap", "artist": "Jerumi", "duration": 139333, "preview": "https://p.scdn.co/mp3-preview/93421d0ef913a20fe2f410d55cf944242b2d8920", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e023c246489d9c10220b8149eef", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["en"]}, {"id": "4DCB1S7G6SmH9qlDpEVIzP", "title": "太聰明", "artist": "Cheer Chen", "duration": 263173, "preview": "https://p.scdn.co/mp3-preview/1d1cd9e8b9a19ddad0689599426bfb179d1f2099", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02a003c7dce99c2676a4beac82", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "3Imvd5yhz3vPyKQhHBomiL", "title": "孤雛", "artist": "AGA", "duration": 294331, "preview": "https://p.scdn.co/mp3-preview/f465522421146edea53b0910ecb0c138d4088d56", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02abdfa0cf36e6cda2c705b505", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["yue"]}, {"id": "1jtkgDB0a11o5rYmpkNcrY", "title": "心酸", "artist": "Yoga Lin", "duration": 250213, "preview": "https://p.scdn.co/mp3-preview/5781ea712bc7a30d62256f7570eb3921a5ff15dd", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0288f1d4a7c52091eece33e67d", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["zh"]}, {"id": "3InFU5aBMwBTgk2EnxT3ir", "title": "戀人", "artist": "Ronghao Li", "duration": 275912, "preview": "https://p.scdn.co/mp3-preview/f970ed60a158c2e8a2fa0fab65b118166ef7c3f8", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024db5899005179189cc049b0e", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["zh"]}, {"id": "5l9sg05BhpfsdLfRvjGsAf", "title": "虚拟", "artist": "陳粒", "duration": 240626, "preview": "https://p.scdn.co/mp3-preview/4f3d32c8a207cbb77e21c59090905a34eb196a12", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025108846a5856e34da7892064", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "2X8dqN4Jd4A7vnh1GHzPk0", "title": "二十二", "artist": "David Tao", "duration": 261906, "preview": "https://p.scdn.co/mp3-preview/aa53a2ccc8610a7622d5f3634bf84a62295bc1f4", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d441b2e9b63f0b9f9d90be19", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "3ehzxWtA5tXu8o3zFdhNSq", "title": "葡萄成熟時", "artist": "Eason Chan", "duration": 277040, "preview": "https://p.scdn.co/mp3-preview/8379571867d62140dabff071f168fb73ee9f0fb2", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e2158fb7cc1a380e17cf945f", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "6o33pDGlm8KvkPuMEJCO6C", "title": "煙霧瀰漫", "artist": "Gigi Leung", "duration": 218800, "preview": "https://p.scdn.co/mp3-preview/2559ae397c351093efe253e4709d0558b2cb0367", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e029274fb9a3d44c1b3027ce8f6", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "4IkQXb1IdIziAJmO3FODo7", "title": "是但求其愛", "artist": "Eason Chan", "duration": 269000, "preview": "https://p.scdn.co/mp3-preview/a9983fe92ae35e1873a475a8be6debe55536feb8", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022b2d0b53be570f289eb5f809", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "4eZrybaLSIoA4oiHkCASW5", "title": "春夏秋冬", "artist": "Leslie Cheung", "duration": 248800, "preview": "https://p.scdn.co/mp3-preview/9c3ab6a0738ab2dd48303edc0312aa3269da6738", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02119c20f395adf3db840638c8", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "69mgDd4R5jAsa8b8oxZqzF", "title": "神愛世人", "artist": "Tang Siu Hau", "duration": 223164, "preview": "https://p.scdn.co/mp3-preview/5de54d07840c9cf3fbd70afb95e25a1cb5a58d98", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e5c22f0e5193b686d631a9a2", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "7xAVLrbnud6OrU6f4FmxDr", "title": "羅生門", "artist": "Juno Mak, Kay Tse", "duration": 262285, "preview": "https://p.scdn.co/mp3-preview/2301aa3a073f2c54733c7091b59b7674e4bd7eb3", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a1ed8b77551b4935fdd0b5a8", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "2pKK1A009lhzhRPeTDderF", "title": "執迷不悔", "artist": "Faye Wong", "duration": 273840, "preview": "https://p.scdn.co/mp3-preview/d4a744628d48c39453c0b3e6814619153c1becb5", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022b2a19540130d3e97245b649", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "7r4Bna7XwT03WCmaAfC4id", "title": "春秋", "artist": "Hins Cheung", "duration": 258040, "preview": "https://p.scdn.co/mp3-preview/3927c32a425af5dcf47c60bad967e79b30c0862b", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0229d9627ff5c88d037100e417", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "4AueyrUkD7CuzvtUbhYH8I", "title": "因講了出來", "artist": "my little airport", "duration": 161032, "preview": "https://p.scdn.co/mp3-preview/7a929277a6d57b466e7bff5b6a75050bef2c4518", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02d338f28800220e70fd760b03", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["yue"]}, {"id": "7Ch8CWubyrCrz3A9IqCySR", "title": "和你", "artist": "余佳運", "duration": 200708, "preview": "https://p.scdn.co/mp3-preview/23b012acc443e719647b5ece0e47be4a5f359a99", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0246c70c88660c91c85ff11b0b", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "1EgGTmmFGtlWuqgXFLrp9x", "title": "溫柔", "artist": "Mayday", "duration": 269596, "preview": "https://p.scdn.co/mp3-preview/f49c1ed1b5779dd77344bffeb3d9cadac413a08f", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02ecffec71478b28134ebc7fa5", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "6btmjh1p327BMAJAczq9Lf", "title": "MISS ME", "artist": "keshi", "duration": 193066, "preview": "https://p.scdn.co/mp3-preview/72ee72c121f88747128c4ac2f08b3d60b749c8f8", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e029f2c9d2c307e24f93a1831b5", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["en"]}, {"id": "1h1odoIBoxI1BvZUpoAGcH", "title": "才二十三", "artist": "Khalil Fong", "duration": 224498, "preview": "https://p.scdn.co/mp3-preview/a5254dd845715831a10df2ac17990d043ecfa2fa", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e024c16d71036df3227b486312b", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "2wxSjPX7frBeeTaoqvhU10", "title": "小宇", "artist": "Zhang Zhen Yue", "duration": 227554, "preview": "https://p.scdn.co/mp3-preview/41676333241b5be9871e2a6c207850e5d482ee6c", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02f06f6d1dc27b1be121e5ae7e", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "3CDcr9ogSecLIwourcz760", "title": "水星记", "artist": "郭顶", "duration": 325266, "preview": "https://p.scdn.co/mp3-preview/8fc0f3601af20dae714178323d7d83b44529144c", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02a0afd108c5474ad64f23faae", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["zh"]}, {"id": "77jIEebt4z9WzaI6LsntDG", "title": "不能說的秘密", "artist": "Jay Chou", "duration": 296533, "preview": "https://p.scdn.co/mp3-preview/ef5ab44544602a322adb91264de7fb7253d6a0d9", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e023c4d0dbbc1022845a9a6ecd4", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["zh"]}, {"id": "13tCl0OoBldLiDPsxS18Kf", "title": "復刻回憶", "artist": "Fiona Sit", "duration": 286266, "preview": "https://p.scdn.co/mp3-preview/7fb493b96ec61f00870cd17721e385f5a9f9f1ad", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0299bc3c8f36df9a89c668f218", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "3qFJpsQaOGkea5MLxbk9Jc", "title": "至少做一件離譜的事", "artist": "Kiri T", "duration": 232839, "preview": "https://p.scdn.co/mp3-preview/b117f498f901108af00eac58ca9c9acc2214c887", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026bb79c3f171525461b2b887b", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "4yJIECgIOgowfgAkPyvo2c", "title": "一天", "artist": "YELLOW黃宣", "duration": 248629, "preview": "https://p.scdn.co/mp3-preview/443c6cec7f7b7844a1965e31db79f308629236ab", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02469b7adf580004d7d18ede24", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "4KjPt8HrShkDOASRyMkTJ4", "title": "帶我去找夜生活", "artist": "告五人", "duration": 299704, "preview": "https://p.scdn.co/mp3-preview/a66dbbb3ef27363d831b2b3459b30a4ca2f05400", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0201ac233a16db3c598b5946ed", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "5JcdsOUCLPfDb0q4hlWlTj", "title": "親密愛人", "artist": "Joanna Wang", "duration": 280173, "preview": "https://p.scdn.co/mp3-preview/7f592df4061c63838d4c0b0b7d3a8358fee769db", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02841f72db02f9addd92c4dd3a", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["zh"]}, {"id": "3cthRwQ2X0SNTaauD7tjn5", "title": "富士山下", "artist": "Eason Chan", "duration": 259133, "preview": "https://p.scdn.co/mp3-preview/d6751a6b031b396b923f0636859831531ae1edc2", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02afcac0b3e8e10a032124b628", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "1ediuzqPBlpLxxhUOL1oYT", "title": "everything that lacks in me", "artist": "Humble the Great", "duration": 153609, "preview": "https://p.scdn.co/mp3-preview/c0a21fb94ecb3e98a693a9961849b7b504951625", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02989106cdf1777b9bf5bd1dc6", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["en"]}, {"id": "3mcwDtyrft2HogMP8ylUyM", "title": "夏日傾情", "artist": "Janice Vidal", "duration": 193386, "preview": "https://p.scdn.co/mp3-preview/cd27c284d1fbffb5aeb3507643071f52b615f7c5", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e026e2f241dfcacab265de697d0", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "6rpEx62woxbdNbDWNlMFlv", "title": "如何掉眼淚", "artist": "Sammi Cheng", "duration": 231480, "preview": "https://p.scdn.co/mp3-preview/9defb2adfa76e3188e34ce1701ecd28deff2f1ce", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d025dcac5029ad8fb753ec66", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "3tRW2UcHmvj03PoJ6RCPEs", "title": "小傳奇", "artist": "Mr.", "duration": 297013, "preview": "https://p.scdn.co/mp3-preview/c207582eac81a3567023930e6a695e3ca49ad01c", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e025802933ff72777b665482594", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["yue"]}, {"id": "4vbp1GWjMo0pwYYC2dNwun", "title": "彳亍", "artist": "Juno Mak", "duration": 242306, "preview": "https://p.scdn.co/mp3-preview/ec0ab08bdb6778bdd033e0bb626e62c052ed3902", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020304e87d17172f67fece22e1", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "39HrUxcvKF3jtLz7fUDWXc", "title": "First Love", "artist": "Hikaru Utada", "duration": 257293, "preview": "https://p.scdn.co/mp3-preview/93078fe5abb1dc5a9ab5459ce0fa0d115141e9bf", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e024fa36b14a276fe560940baa0", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "477CB93mH986mrIheQD0RR", "title": "come again", "artist": "m-flo", "duration": 351642, "preview": "https://p.scdn.co/mp3-preview/98ddccffcd6bd85fb0d22552d3f7654018397cb6", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0240b9da3f4fc33ebdcae34c84", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ja"]}, {"id": "5Ij88F5dK7yib1RoNA8wGV", "title": "烏 - Raven", "artist": "Kenshi Yonezu", "duration": 248494, "preview": "https://p.scdn.co/mp3-preview/368173c1e7b3075cb5f830363de774c0eb0fb097", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e026587e9ae2e13c8bd69c0bf7e", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["ja"]}, {"id": "5rrRZQpJmtfaMjU6WyIU6t", "title": "あじあのきぼう", "artist": "Emoh Les", "duration": 209000, "preview": "https://p.scdn.co/mp3-preview/c94d3dc1b842705d817f30067bd6d90930c0f8cc", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0264694018d14f0846c97b6388", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "348NF6vX0Yh22xvH0EZEro", "title": "NIGHT DANCER", "artist": "imase", "duration": 210948, "preview": "https://p.scdn.co/mp3-preview/9b73cdce272a16fac211bca5415ec98eb8ec5dc1", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02e2a3788f1a9dea9028099d4e", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "0bdAQ9dwLA5cJtgM05PRKW", "title": "Nagisa", "artist": "imase", "duration": 226489, "preview": "https://p.scdn.co/mp3-preview/7670e1fc7cb5b72e87543047815135c85abc8a32", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0277a3943437e54bfe95f467c0", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "31yv1hR9gw1WSEmtqsaZbD", "title": "花束を君に", "artist": "Hikaru Utada", "duration": 278240, "preview": "https://p.scdn.co/mp3-preview/b8a642722723b7753ef8196bce9ce881ba99e286", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e029f5c5e06d31160668cd48c22", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["ja"]}, {"id": "0o9zmvc5f3EFApU52PPIyW", "title": "Shinunoga E-Wa", "artist": "Fujii Kaze", "duration": 185573, "preview": "https://p.scdn.co/mp3-preview/cd53b0b8fb31048f35588cdf0c4c57a4980b874d", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0222805a1b17e41ae357bd98bc", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "4PNii2qmrTZD0fzQ7gr0UT", "title": "あなたは煙草　私はシャボン", "artist": "Lovely Summer Chan", "duration": 276533, "preview": "https://p.scdn.co/mp3-preview/1287b1c49d53f9bd21bea65f3820e3340c7f20a2", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026a8cbbea11958f46f6b650d6", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "0NXfbjd83biF4StqvYU16h", "title": "cider cider", "artist": "mitsume", "duration": 232280, "preview": "https://p.scdn.co/mp3-preview/82b8aa7a74869d1b95bfe8f3cdeba088685e88d1", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020f50fba4a70f268dde7e93a3", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "6RyqEix17XNNzdvhU8FrFK", "title": "CAREFREE", "artist": "lo-key design, kojikoji", "duration": 199113, "preview": "https://p.scdn.co/mp3-preview/d258eb5a07c41ef379a72e7ce58680c506764e96", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02894a7f2f25c41505295a600e", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ja"]}, {"id": "6IwQAPovmEz5ft8bDUKLrj", "title": "勿忘", "artist": "Awesome City Club", "duration": 251533, "preview": "https://p.scdn.co/mp3-preview/da1cd6c848ef36f7c279529b987df6f7a646ef0b", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028e9f0ab71e21b620054ab1d7", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "6AsQ1wqbmYSRmc3S9mxbaj", "title": "赤と青", "artist": "ROTH BART BARON", "duration": 193454, "preview": "https://p.scdn.co/mp3-preview/53c9aa4f270de19fbba2ad358b4fa2913ea5905f", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02baced762cec89b1818e128a4", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "5y1N9zfII6NnDRzNPmMPJv", "title": "mabataki", "artist": "Vaundy", "duration": 246050, "preview": "https://p.scdn.co/mp3-preview/fcc072f0e74ae81575a92712980c5b319651a04f", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02e0c3a68b9981c2e7b25f9737", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "5RhWszHMSKzb7KiXk4Ae0M", "title": "One Last Kiss", "artist": "Hikaru Utada", "duration": 252026, "preview": "https://p.scdn.co/mp3-preview/2bc09661a680442e18bbfdff6542888b8d691a79", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e025d998a6de7354d31ce48941b", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ja"]}, {"id": "3r8RuvgbX9s7ammBn07D3W", "title": "Ditto", "artist": "NewJeans", "duration": 185506, "preview": "https://p.scdn.co/mp3-preview/4f048713ddfa434539dec7c3cb689f3393353edd", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02edf5b257be1d6593e81bb45f", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["ko"]}, {"id": "5h1BN75CEh8wdSwE1xrbSe", "title": "Slow Dancing", "artist": "V", "duration": 187026, "preview": "https://p.scdn.co/mp3-preview/0a655b364caef39379d42b81d656fabed20539d6", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028e504c5aedaae49a73ed4963", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ko"]}, {"id": "2fCwv2ppU5nTRTckomIGsd", "title": "REDRED", "artist": "CORTIS", "duration": 163001, "preview": "https://p.scdn.co/mp3-preview/06fb2bb357494081a5b8e753e9c56ccc83520f11", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0224ace1518851b27e9983f739", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["ko"]}, {"id": "2oR7jPvWPC08Su4KYmKR3O", "title": "LEMONADE", "artist": "aespa", "duration": 187000, "preview": "https://p.scdn.co/mp3-preview/d013279655c524737c4b150432c44338833cb6bb", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0253ca3f7b64b26001a22ea1c3", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["ko"]}, {"id": "3lTdjfpGVeYLeHfrczXw1a", "title": "seesaw (Feat. IU)", "artist": "Crush, IU", "duration": 181000, "preview": "https://p.scdn.co/mp3-preview/f7bbca6bcabf82e1a465529fd3ad9ff696b0ada5", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e029d506285395d9bc3850f904c", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ko"]}, {"id": "1k0JAiH11gHL9dc5dfQjQr", "title": "NOT CUTE ANYMORE", "artist": "ILLIT", "duration": 131997, "preview": "https://p.scdn.co/mp3-preview/350ee36ce03fa1a731cca5966f373a635c7c87ef", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e023d09075f6c7fabe9a7234cb3", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["ko"]}, {"id": "0gzXQHsv4zYHQ1pvlyYZZa", "title": "Heart on the Window (with WENDY)", "artist": "Jin, WENDY", "duration": 177093, "preview": "https://p.scdn.co/mp3-preview/8172755379449673e14c59c369ac29f4df817d0e", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020aa3d58774384527afb5df53", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["ko"]}, {"id": "0hqj5JBnFt1BHEz2UCFwrl", "title": "How can I love the heartbreak, you're the one I love", "artist": "AKMU", "duration": 290095, "preview": "https://p.scdn.co/mp3-preview/c204b7f258d067806c4c432ddfe452b37fec7f73", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d41cdd1f3e033a0ea1642112", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["ko"]}, {"id": "6GSdBUjAnJmIjxMAYz5WCa", "title": "BUMPA", "artist": "BIBI", "duration": 218366, "preview": "https://p.scdn.co/mp3-preview/cd196a111aa2b05a54b05e1fd6d69aec7718c41a", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e022d1df2c8f8bf05cd3dea060b", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ko"]}, {"id": "4pC2enBFIm4ITiPMYXIuy7", "title": "Rooftop", "artist": "N.Flying", "duration": 210652, "preview": "https://p.scdn.co/mp3-preview/bdd11b5285a5f8e556f6ef453773b55ca54aca6f", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0238b14a3931a9fa48ddba4f02", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ko"]}, {"id": "5BqwC9kOBbqYkzdOKeXFFk", "title": "for lovers who hesitate", "artist": "JANNABI", "duration": 265000, "preview": "https://p.scdn.co/mp3-preview/acccb495f072c5567f0018718695682732c424a4", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02f694adfa02990eaca79fec1b", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ko"]}, {"id": "6TBJkXHPhu3EsMk1bshwuI", "title": "ONLY", "artist": "LEEHI", "duration": 240906, "preview": "https://p.scdn.co/mp3-preview/eafce5ab37f349c128230b4d371801b875b5c26b", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d5d11b6ac4242aaa41c8be69", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["ko"]}, {"id": "66UcQu5LBo2A7AC0A5r0lI", "title": "Wi Ing Wi Ing", "artist": "HYUKOH", "duration": 194866, "preview": "https://p.scdn.co/mp3-preview/70ce8fe4dee0477d026a907270373957f99539d4", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021ca37e9bcd0cc377a82aec48", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ko"]}, {"id": "0V3eVNmgkOzJ5wQztnCpAV", "title": "Heya", "artist": "The Black Skirts", "duration": 325000, "preview": "https://p.scdn.co/mp3-preview/2b138711cbe9022032c3ad05e5f4d5a1f1cff291", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0210b3ebc65d2f65964cf461d8", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ko"]}, {"id": "4prmN74VZiK24HLPO6zdOG", "title": "She′s In The Rain", "artist": "The Rose", "duration": 237576, "preview": "https://p.scdn.co/mp3-preview/ed6dc1c5ef41e10c603b76f7a10d8e6c1452929b", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02486080ff70e94f4bf9761edf", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["ko"]}, {"id": "4iZ4pt7kvcaH6Yo8UoZ4s2", "title": "Snooze", "artist": "SZA", "duration": 201800, "preview": "https://p.scdn.co/mp3-preview/501f382ab046e43df87e7f9e43a271909bc6c4d1", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02bc18bdade69ec5ef0bb25b17", "group": 1, "style": "rnb / soul", "genres": ["rnb", "soul"], "distance": 1, "languages": ["en"]}, {"id": "0iO2iCAjtX0t5duvczNQt6", "title": "Oscar Winning Tears.", "artist": "RAYE", "duration": 183653, "preview": "https://p.scdn.co/mp3-preview/cd7c83023844599dafe1c963b8b803e6cabc5772", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0294e5237ce925531dbb38e75f", "group": 1, "style": "soul / pop", "genres": ["soul", "pop"], "distance": 1, "languages": ["en"]}, {"id": "3Et4LKZLnXygPYfNdeB3D3", "title": "When the End Comes", "artist": "Andrew Belle", "duration": 354400, "preview": "https://p.scdn.co/mp3-preview/ab58a3cfc4694f35de4fae25e49b090945ddfb58", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b348d509e079543f724bb760", "group": 1, "style": "indie-pop / electronic", "genres": ["indie-pop", "electronic"], "distance": 1, "languages": ["en"]}, {"id": "7D0RhFcb3CrfPuTJ0obrod", "title": "Sparks", "artist": "Coldplay", "duration": 227093, "preview": "https://p.scdn.co/mp3-preview/4ffce9684e191005c15ab6ce31540fcec78eaacf", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e029164bafe9aaa168d93f4816a", "group": 0, "style": "soft-rock / acoustic", "genres": ["soft-rock", "acoustic"], "distance": 0, "languages": ["en"]}, {"id": "7tFI5cqfAoR7MIvmbw1qd8", "title": "Delete Ya", "artist": "Djo", "duration": 203349, "preview": "https://p.scdn.co/mp3-preview/eff871b522ec79cb4293fadcda957bbdd6db7801", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02473ce335c7b34527271d668c", "group": 1, "style": "indie-pop / rock", "genres": ["indie-pop", "rock"], "distance": 1, "languages": ["en"]}, {"id": "60MRYgAGGSdDG8mf5SjIPM", "title": "feel like we used to", "artist": "Zimmer90", "duration": 176000, "preview": "https://p.scdn.co/mp3-preview/8c6b5f05e13644c26ce1626f32ad598e02be3d8a", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0259911fa193809d20acd69227", "group": 1, "style": "Indie Disco", "genres": ["Indie Disco"], "distance": 1, "languages": ["en"]}, {"id": "6cx5CvFhqN19efStehJqoW", "title": "Valentine", "artist": "Laufey", "duration": 168906, "preview": "https://p.scdn.co/mp3-preview/3c123a80ca663a4ba834ba4e0e383b16b7cda158", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0248341e864d4b4881f56f01b4", "group": 2, "style": "jazz-pop", "genres": ["jazz-pop"], "distance": 2, "languages": ["en"]}, {"id": "18uwL0vNUanqZH0ro2QcOP", "title": "comethru", "artist": "Jeremy Zucker", "duration": 181613, "preview": "https://p.scdn.co/mp3-preview/c4523509311dad00dc70a06f1cfe2b0b358f6698", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02cb16227d90152c2a5022bba1", "group": 1, "style": "acoustic-pop / indie-pop", "genres": ["acoustic-pop", "indie-pop"], "distance": 1, "languages": ["en"]}, {"id": "2RkZ5LkEzeHGRsmDqKwmaJ", "title": "Ordinary", "artist": "Alex Warren", "duration": 186964, "preview": "https://p.scdn.co/mp3-preview/023ecc53465fc16782a581cbdc2e9d738cde1453", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e028d18d73bbfc8985d52865edf", "group": 1, "style": "pop", "genres": ["pop"], "distance": 1, "languages": ["en"]}, {"id": "3VSuvaWBXSmviP40CqgbWn", "title": "Enamórate de Ti", "artist": "José y el Toro", "duration": 192250, "preview": "https://p.scdn.co/mp3-preview/eac8855cf693a3e830060827a99b0674c67195bb", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02e867fe796b711a2af9202e9d", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["es"]}, {"id": "5bEScnskk29Gv6N8XZsgf3", "title": "Reloj Ingrato - Acústica", "artist": "José y el Toro", "duration": 173684, "preview": "https://p.scdn.co/mp3-preview/edde603cdf74a7532ad8ed3ec2f91ac11b515d9c", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02c43c2852b7d6a134551f5059", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["es"]}, {"id": "6W4fSGsqNmyPTYo29rJ50z", "title": "La Nieve - Original song from the film La Bola Negra", "artist": "Guitarricadelafuente", "duration": 244197, "preview": "https://p.scdn.co/mp3-preview/43e1c49066b297baabf6c9d1a40d75894f2b3314", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e029557578fa3f38b4bca47d4d5", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["es"]}, {"id": "7dSZ6zGTQx66c2GF91xCrb", "title": "PROVENZA", "artist": "KAROL G", "duration": 210200, "preview": "https://p.scdn.co/mp3-preview/560f1bd9a912205ceb4a061a973ae45e1b24a15a", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e70c454b8989f09d1e11ea92", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "1Bhm5HNO1cq8olDbBmokyL", "title": "Copines", "artist": "Aya Nakamura", "duration": 171720, "preview": "https://p.scdn.co/mp3-preview/d24f9d33e1dfccbaa045b279c87a0de3155dc5dd", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0256feea19a0436ec52a9217c9", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["fr"]}, {"id": "2JH26hQtnqWUNnQET8o2N1", "title": "Divinize", "artist": "ROSALÍA", "duration": 243240, "preview": "https://p.scdn.co/mp3-preview/59e2354d651fc423aba29f17f7bc805738798e01", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0293ee2e2f2dfb7de9befcc164", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "3sK8wGT43QFpWrvNQsrQya", "title": "DtMF", "artist": "Bad Bunny", "duration": 237117, "preview": "https://p.scdn.co/mp3-preview/e41ce6b82410d81c08baacca2a7169e5ace4287d", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02bbd45c8d36e0e045ef640411", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "6hpuesKPNa3WhV48O7Fa47", "title": "SUPERESTRELLA", "artist": "Aitana", "duration": 183529, "preview": "https://p.scdn.co/mp3-preview/16b40227ae79de93f49eb21da2cce8a6e4af4690", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e9c382b5b9b3221428da47c2", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "3h5T5JypYU7huFiVYhv1dr", "title": "BbY WOW", "artist": "KAROL G, Judeline, rusowsky", "duration": 225834, "preview": "https://p.scdn.co/mp3-preview/f6ab45a8375c5bcf6f03161edd9f44c1fad501c8", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0221deb742375f88edfb2e7368", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "31qUOytzAm4MOQgxxHFSVo", "title": "De Quién Serás", "artist": "Darviin", "duration": 174459, "preview": "https://p.scdn.co/mp3-preview/4312aa8317ce41b87e64740e5eda5c36dd168f1a", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02e5ee4aad8ff15b4901baafdf", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["es"]}, {"id": "4QpoPO2Z9xqESwEsfTjaLj", "title": "PERO TÚ", "artist": "KAROL G, Quevedo", "duration": 183906, "preview": "https://p.scdn.co/mp3-preview/07db51ef2f37fcea43bbe0388f3673dc982fab46", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0267a1aecfe71c8cb90cc73b44", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "1QwfEonEHRjLItRU7kISSe", "title": "BBY ROMEO", "artist": "rusowsky, Ralphie Choo", "duration": 198715, "preview": "https://p.scdn.co/mp3-preview/b3e517d4c90f5ebdb0492be000ec49d6e88bba2b", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0250efdf61713bd01daa62dfa5", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["es"]}, {"id": "6ZHKeoIOkvmYUIfxHLtE2Z", "title": "Siesta Freestyle", "artist": "Lewis OfMan, Alicia te quiero", "duration": 194160, "preview": "https://p.scdn.co/mp3-preview/d2f2809218f64082c27f39b1c855ed7ca9f50002", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e020dfde54ca58fa9c1c5fa2d93", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["es"]}, {"id": "2mQMfGmg6hiCYKyhUVj2t0", "title": "Lluvia de Verano", "artist": "Kira Brown, AMEX", "duration": 157380, "preview": "https://p.scdn.co/mp3-preview/d15ec73b2b64fabf329ed09a8f429f921b41c804", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0205d67ed83482bca13efaa7ea", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["es"]}, {"id": "0E0DRHf5PfMeor0ZCwB3oT", "title": "Otro Atardecer", "artist": "Bad Bunny, The Marías", "duration": 244444, "preview": "https://p.scdn.co/mp3-preview/99bed6e8ce1a8ea16c626c6734b007fc526d90d5", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0249d694203245f241a1bcaa72", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["es"]}, {"id": "5Ve4o0PH6DWHhUkXT8hG1b", "title": "Sous la pluie", "artist": "LaBlue, Astrønne", "duration": 233000, "preview": "https://p.scdn.co/mp3-preview/08f44dccb479526d1edb993816d1509863856946", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e029dbd58edeeb02d855c38d6be", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["fr"]}, {"id": "15FFSrqYw06jqjaqXys7yM", "title": "La vie est belle", "artist": "La Belle Vie", "duration": 278256, "preview": "https://p.scdn.co/mp3-preview/dc94180a52bc2af237eee7c80d8f009ccbd55903", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02ad8a382feb8f279d66988734", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "3NakEPSaVKsqqimJW66xCc", "title": "grandiose", "artist": "Pomme", "duration": 195280, "preview": "https://p.scdn.co/mp3-preview/aaae23b9d6f22253d8356cda9db3e6ec0e44ac45", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0230bc1c0c2e0d7cb718f856f2", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "7ME2fa1efBC5wro6jF58fD", "title": "deja vu (feat. Joe la panic)", "artist": "aron!, Joe la panic", "duration": 163315, "preview": "https://p.scdn.co/mp3-preview/30bcd690708d181bf2ffccd3509fc2434a548e99", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02efe57b855a262c463b4beaf8", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["fr"]}, {"id": "7aO1M0bzcaYvvqN9qVJEFs", "title": "Euphories", "artist": "Videoclub", "duration": 211493, "preview": "https://p.scdn.co/mp3-preview/ace87a4da2a11e1e62e4a4b64014d3eb55e66723", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021f74480c2297fe08d015a3a6", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "2rFFJqPjLbdcJFbBayR2pM", "title": "少女的祈禱", "artist": "Miriam Yeung", "duration": 211106, "preview": "https://p.scdn.co/mp3-preview/14212a1062869f398e8e9d20fc3f623d4d3ecc9f", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b76f86b80dd20b116836f22b", "group": 1, "distance": 1, "genres": ["pop", "ballad"], "style": "pop / ballad", "languages": ["yue"]}, {"id": "5sczYVrDsLctXXrOtIb6j3", "title": "Summer Night Wind", "artist": "Layton Wu", "duration": 208831, "preview": "https://p.scdn.co/mp3-preview/07e623e5227dd63a158ad7fde63bc3cbdb425282", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b2fb5ceba2ccfd4cb36caf89", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["zh"]}, {"id": "6fAfv4dn8FbcIsXhU0Jed7", "title": "carpool", "artist": "Zachary Knowles", "duration": 164665, "preview": "https://p.scdn.co/mp3-preview/984977335be16d79f68c25c3ca0600e64ebb4759", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0240e0f25877456a413ea59c9d", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["en"]}, {"id": "61OJxhoY3Ix50rYVKo8zRK", "title": "Can I Call You Tonight?", "artist": "Dayglow", "duration": 278769, "preview": "https://p.scdn.co/mp3-preview/bccf56a87c631455201b6cc62f5fad7319ded47c", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e025160eaecb31b739ea1c2eaa5", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["en"]}, {"id": "4Kwhm5VU4huxmQtBqd1AXo", "title": "Cry Cry Cry", "artist": "Coldplay", "duration": 167280, "preview": "https://p.scdn.co/mp3-preview/caf73d2304ad9e3cf480d3c74fa1d41946bad3af", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02722d16eb3b31fae9cb1d2ada", "group": 1, "distance": 1, "genres": ["rnb", "soul"], "style": "rnb / soul", "languages": ["en"]}, {"id": "1m12civuznXnst5AiU8duO", "title": "Monde Nouveau", "artist": "Oscar Anton", "duration": 157116, "preview": "https://p.scdn.co/mp3-preview/f6bf431ce461b28604b90507385199c82d2e9413", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02b47c06c15a9f11cade20f3a5", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "6zLuXwumzI6v4tTjbvyK3q", "title": "Printemps noir", "artist": "Andrea Lindsay", "duration": 210440, "preview": "https://p.scdn.co/mp3-preview/2e4834bc1acfb48a136849f0024b09f5cd48fb88", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e023fd18040a5cdbdbdce5e1829", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "1FJ8a7vzA03vyOT4OEg7l5", "title": "jtm encore", "artist": "miki", "duration": 233906, "preview": "https://p.scdn.co/mp3-preview/110763ef880afbd3d6f26e015a27e901980c7efe", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b46fd96bea4bf06b8128f9f2", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["fr"]}, {"id": "7oZTJzJwRC65evfAxHCw2d", "title": "minuit", "artist": "Oscar Anton, Clementine", "duration": 225013, "preview": "https://p.scdn.co/mp3-preview/5750db825efa75dda0b8dc1b9f61c9ea49a0f648", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e024e7f47efc4b4fa67797d0e2f", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "4Rbfkw5zn19dkEBKy0oP5H", "title": "nuits d'été", "artist": "Oscar Anton, Clementine", "duration": 208214, "preview": "https://p.scdn.co/mp3-preview/38bc86156d0134ddad88e598b2c982b91c9fe045", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021609ed132fe67e15b148343d", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "1aLHvqPB5CxGYzhJB7Hzo1", "title": "les filles, les meufs", "artist": "marguerite", "duration": 179280, "preview": "https://p.scdn.co/mp3-preview/eec0fde4d61e4659686a7c4fe6bf1da64942702b", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e022952ae6954b7fbd044a22a2c", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "5467lWYmIF1gbuTJ5vcUZH", "title": "Canopée", "artist": "Polo & Pan", "duration": 276293, "preview": "https://p.scdn.co/mp3-preview/7f9f29777af04c127a2fbc0c7b764f148b7d830c", "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02db42d42222a9e0eba92f63ca", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["fr"]}, {"id": "4cSHMHSTRhetAtT1iDP2zO", "title": "Été avec toi", "artist": "Adèle Castillon", "duration": 187320, "preview": "https://p.scdn.co/mp3-preview/08e298ddcba939587fe6cf196a554b42d40d1f46", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0243db3f10cf8ceb525ef193ac", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "0gDYaK47P97QI971sOvghG", "title": "Rappeler son ...", "artist": "Fredz", "duration": 162253, "preview": "https://p.scdn.co/mp3-preview/c95946c367498fca94a423b0cb8f855f7098ac8f", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e025f043e5a90c2a46dd5e85431", "group": 2, "distance": 2, "genres": ["electronic", "pop"], "style": "electronic / pop", "languages": ["fr"]}, {"id": "5xz4tKSzmThxGDjps2eB5a", "title": "Traverser", "artist": "Emma Peters", "duration": 178013, "preview": "https://p.scdn.co/mp3-preview/9c1344a15beae7fb1c33d8b9b7fd439b4d91134a", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021d016873035167e752de9304", "group": 0, "distance": 0, "genres": ["indie-pop"], "style": "indie-pop", "languages": ["fr"]}, {"id": "5wWxUdgn2OugIOvLJOdreH", "title": "Lo Que Construimos", "artist": "Natalia Lafourcade", "duration": 279213, "preview": "https://p.scdn.co/mp3-preview/ed5341885fd040dd66e13bfb4870b53cb357ae48", "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02bd4c237c04735257dd64c510", "group": 2, "distance": 2, "genres": ["folk", "pop"], "style": "folk / pop", "languages": ["es"]}];
+const listeningNotes=[{"tags": ["Guitar", "Piano", "Reflective"], "description": "Guitar, piano and double bass give this track an acoustic instrumental foundation.", "sourceLabel": "AllMusic · track credits", "sourceUrl": "https://www.allmusic.com/album/trees-for-the-woods-mw0004819790"}, {"tags": ["Breathy vocals", "Dream pop", "Gentle"], "description": "A gentle opening to Love Spells’ debut, with breathy vocals that keep the mood close and unhurried.", "sourceLabel": "Stage Haze", "sourceUrl": "https://stagedhaze.com/2026/07/23/love-spells-love-is-the-law-is-a-dreamy-romantic-debut/"}, {"tags": ["Bedroom pop", "Layered vocals", "Soft synths"], "description": "Bright melodies meet darker synth textures: an easygoing surface with a more introspective feeling underneath.", "sourceLabel": "Get Some Magazine", "sourceUrl": "https://getsomemagazine.squarespace.com/blog/pool-girl-enchants-in-new-track-crab"}, {"tags": ["Alternative", "2026 release"], "description": "An alternative release from KAIRO, selected as another direction to explore in this playlist.", "sourceLabel": "Apple Music · release details", "sourceUrl": "https://music.apple.com/us/album/just-when-its-over-single/6766294728"}, {"tags": ["R&B", "Dreamy", "Devotion"], "description": "A dreamy love song about wanting to stay present for every moment with someone.", "sourceLabel": "TIME", "sourceUrl": "https://time.com/6239912/sza-sos/"}, {"tags": ["Steady groove", "Electric piano", "Soft rock"], "description": "A steady bass-and-drum foundation leaves space for electric piano and floating guitar textures.", "sourceLabel": "Korneff Audio", "sourceUrl": "https://korneffaudio.com/new-monday-103/"}, {"tags": ["Country duet", "Romantic", "Vulnerability"], "description": "Two voices tell the story of carefree living giving way to having someone you are afraid to lose.", "sourceLabel": "Country Central", "sourceUrl": "https://countrycentral.com/reviews/megan-moroney-luke-bryan-more-single-review/"}, {"tags": ["Piano", "Strings", "Heartfelt"], "description": "Piano, strings and electric guitar give this reflection on love a fuller, more emotional setting.", "sourceLabel": "The Bachelor · album review", "sourceUrl": "https://bachelor.wabash.edu/wp-content/uploads/2024/08/Final-Pages-08-25-2024.pdf"}, {"tags": ["Acoustic guitar", "Folk", "Slow build"], "description": "A delicate acoustic opening grows more intense as the story unfolds. A choice for listening closely.", "sourceLabel": "Holler", "sourceUrl": "https://holler.country/lyrics/orange-juice-by-noah-kahan-lyrics-and-meaning/"}, {"tags": ["Pop", "Playful", "Carefree"], "description": "A more playful turn: this track brings a carefree mood into Djo’s album The Crux.", "sourceLabel": "Apple Music · album notes", "sourceUrl": "https://music.apple.com/us/album/basic-being-basic/1791184860?i=1791184865"}, {"tags": ["Electric guitar", "Love song", "Nostalgic"], "description": "Steady electric-guitar strumming gives this love song a tender, nostalgic character.", "sourceLabel": "Annenberg Media", "sourceUrl": "https://www.uscannenbergmedia.com/2024/09/23/keshi-shows-promising-growth-in-sophomore-album-requiem/"}, {"tags": ["Piano", "Strings", "Theatrical"], "description": "Piano and strings support a theatrical vocal performance, bringing more drama into the selection.", "sourceLabel": "Song background", "sourceUrl": "https://en.wikipedia.org/wiki/Oscar_Winning_Tears"}, {"tags": ["Synth hook", "Drum machine", "80s pop"], "description": "A bright synth hook and drum-machine pulse make this a more rhythm-driven choice.", "sourceLabel": "Pitchfork", "sourceUrl": "https://pitchfork.com/reviews/tracks/harry-styles-as-it-was/"}, {"tags": ["Guilele", "Piano", "Vocals"], "description": "Guilele, piano and layered vocals: a smaller instrumental palette for a quieter direction.", "sourceLabel": "Artist credits · Bandcamp", "sourceUrl": "https://angelodeaugustine.bandcamp.com/track/santa-barbara"}, {"tags": ["Acoustic ensemble", "Travel", "La Comitiva"], "description": "Developed during the band’s South American tour, this track comes from La Comitiva’s acoustic ensemble world.", "sourceLabel": "Label notes · Forced Exposure", "sourceUrl": "https://www.forcedexposure.com/Catalog/BUBBLES.009LP.html"}, {"tags": ["Soul", "Cinematic", "Melancholy"], "description": "A mournful, cinematic reflection on an ex, from Joesef’s mix of soul, jazz and pop.", "sourceLabel": "NME", "sourceUrl": "https://www.nme.com/reviews/album/joesef-does-it-make-you-feel-good-ep-review-2782754"}, {"tags": ["Echoing guitar", "Hushed vocals"], "description": "Spacious guitar and quiet vocals offer a gentler direction.", "sourceLabel": "The Guardian · live review", "sourceUrl": "https://www.theguardian.com/music/2017/apr/19/cigarettes-after-sex-review-manchester"}, {"tags": ["Reflective", "Connection", "Perspective"], "description": "Belle describes this song as a reminder to keep loved ones close and let less important things recede.", "sourceLabel": "Artist commentary · chorus.fm", "sourceUrl": "https://chorus.fm/features/andrew-belle-when-the-end-comes-song-premiere/"}, {"tags": ["Bossa nova", "Soft vocals", "Fluid rhythm"], "description": "Soft vocals meet bossa-nova-influenced production for a fluid, relaxed change of pace.", "sourceLabel": "The Wild Honey Pie", "sourceUrl": "https://www.thewildhoneypie.com/buzzing-daily/maye-t%C3%BA/p47"}, {"tags": ["Moody synths", "Bass", "Guitar"], "description": "Synths, bass and guitar create a moody setting for a relationship coming into painful focus.", "sourceLabel": "SoulBounce", "sourceUrl": "https://soulbounce.com/2022/09/christian-kuria-deep-green/"}, {"tags": ["Guitar riff", "Baile rhythm", "UK rap"], "description": "A guitar-led beat with baile-funk rhythms gives the two rappers room to trade verses.", "sourceLabel": "TRENCH", "sourceUrl": "https://trenchtrenchtrench.com/news/dave-central-cee-sprinter"}, {"tags": ["Retro pop", "R&B", "Crossover"], "description": "A retro-pop turn within Lenae’s R&B world, opening a different route through the playlist.", "sourceLabel": "GRAMMY.com · artist interview", "sourceUrl": "https://www.grammy.com/news/ravyn-lenae-new-album-birds-eye-interview-videos/"}, {"tags": ["Brass", "Soul", "Theatrical"], "description": "Soul vocals and prominent brass bring a more outgoing, theatrical energy to this selection.", "sourceLabel": "The Singles Jukebox", "sourceUrl": "https://thesinglesjukebox.com/raye-where-is-my-husband/"}, {"tags": ["Electronic pop", "Yearning", "Anticipation"], "description": "A party imagined for someone who never arrives: electronic pop built around longing and anticipation.", "sourceLabel": "Artist commentary · Apple Music", "sourceUrl": "https://music.apple.com/us/album/anthems/1513162098"}, {"tags": ["Soul sample", "Duet", "Tender"], "description": "A Luther Vandross and Cheryl Lynn sample anchors a low-key exchange between Kendrick Lamar and SZA.", "sourceLabel": "The Singles Jukebox", "sourceUrl": "https://thesinglesjukebox.com/kendrick-lamar-ft-sza-luther/"}, {"tags": ["Saxophone", "Mellow house", "Repetition"], "description": "Saxophone leads a mellow house pulse, making this a groove-focused option.", "sourceLabel": "Malayna Chang · album review", "sourceUrl": "https://malaynachang.substack.com/p/day-77365-album-review-everything"}, {"tags": ["Acoustic guitar", "Quiet", "Intimate"], "description": "Spare acoustic playing and a restrained vocal leave plenty of space around the melody.", "sourceLabel": "GRAMMY.com · album feature", "sourceUrl": "https://www.grammy.com/news/how-coldplays-parachutes-ushered-new-wave-mild-mannered-guitar-bands/"}, {"tags": ["Ballad", "Dreamy", "Nostalgic"], "description": "A dreamy ballad that leans into the song’s atmosphere of leisure and nostalgia.", "sourceLabel": "Pitchfork", "sourceUrl": "https://pitchfork.com/reviews/albums/lana-del-rey-chemtrails-over-the-country-club/"}];
+const $=id=>document.getElementById(id);
+const periods=['3 days','2 weeks','2 months','6 months','1 year'];
+const modes=['Arrange, then let me reorder','Make suggestion','Follow the playlist · next only','Act without asking'];
+const descriptions=['A listening sequence, already arranged. Reorder, shuffle, or skip tracks.','A possibility, with a reason. You decide what comes next.','View the playlist and skip to the next track. Selection and reordering are disabled.','Let the music unfold. Just listen.'];
+const levels=['High','Open','Settling','Focused','Low'];
+const notes=['Only a few days of evidence. Several directions remain possible.','A few patterns are emerging, with room to wander.','Recurring preferences begin to guide the selection.','A stronger pattern. Most choices stay close to it.','A stable demo profile. Familiar vocal languages with subtle genre variation.'];
+// Explicit language preferences are collected before the experience starts.
+// Language is selected first, independently of catalogue size; genre is secondary.
+let familiarLanguages=['en'];
+let experienceStarted=true;
+const languageNames={yue:'Cantonese',en:'English',fr:'French',ja:'Japanese',ko:'Korean',zh:'Mandarin',es:'Spanish'};
+const languageLabel=t=>t.languages.map(code=>languageNames[code]||code).join(' / ')||'Language unverified';
+const languageDistance=t=>!t.languages.length?null:t.languages.every(code=>familiarLanguages.includes(code))?0:t.languages.some(code=>familiarLanguages.includes(code))?1:2;
+// Each system-generated block contains ten songs, including its first/current song.
+const memoryRules=[
+ {persona:2,otherLanguages:[4,5]},
+ {persona:3,otherLanguages:[3,4]},
+ {persona:5,otherLanguages:[2,3]},
+ {persona:7,otherLanguages:[1,2]},
+ {persona:9,otherLanguages:[1,1]}
+];
+const genreWeights=[[.45,.35,.20],[.48,.34,.18],[.51,.33,.16],[.54,.32,.14],[.57,.31,.12]];
+const isPersonaTrack=t=>t.languages.some(code=>familiarLanguages.includes(code));
+// O tracks use one of the other seven chooser languages; mixed tracks containing P count as P.
+const otherTrackLanguage=t=>!isPersonaTrack(t)&&t.languages.length===1&&languageNames[t.languages[0]]?t.languages[0]:null;
+let slates=[];
+function rebuildSlates(){
+ const known=tracks.map((t,i)=>i).filter(i=>isPersonaTrack(tracks[i])||otherTrackLanguage(tracks[i]));
+ slates=memoryRules.map(()=>[...known]);
+}
+function shuffled(items){
+ const result=[...items];
+ for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
+ return result;
+}
+function memoryPattern(level){
+ const tail=(p,o)=>shuffled([...Array(p).fill('P'),...Array(o).fill('O')]);
+ switch(level){
+  case 0:return [...Array(4).fill('O'),...tail(2,4)];
+  case 1:return [...tail(1,3),...tail(2,4)];
+  case 2:return ['P','P',...tail(3,5)];
+  case 3:return [...Array(4).fill('P'),...tail(3,3)];
+  default:return [...Array(9).fill('P'),'O'];
+ }
+}
+function buildMemoryBatch(level,excluded=[]){
+ const rule=memoryRules[level],pool=currentSlate().filter(i=>!excluded.includes(i));
+ const persona=pool.filter(i=>isPersonaTrack(tracks[i]));
+ const codes=shuffled([...new Set(pool.map(i=>otherTrackLanguage(tracks[i])).filter(Boolean))]);
+ const [min,max]=rule.otherLanguages;
+ const languageCount=min+Math.floor(Math.random()*(max-min+1));
+ if(persona.length<rule.persona||codes.length<languageCount)throw Error('Insufficient catalogue for memory rules');
+ const selectedCodes=codes.slice(0,languageCount),otherCount=10-rule.persona;
+ // Guarantee every chosen O language occurs, then randomize the remaining language slots.
+ const otherCodes=[...selectedCodes];
+ while(otherCodes.length<otherCount){
+  const available=selectedCodes.filter(code=>otherCodes.filter(c=>c===code).length<pool.filter(i=>otherTrackLanguage(tracks[i])===code).length);
+  if(!available.length)throw Error('Insufficient O tracks for memory rules');
+  otherCodes.push(available[Math.floor(Math.random()*available.length)]);
+ }
+ const languageSlots=shuffled(otherCodes),used=new Set(),result=[];
+ for(const kind of memoryPattern(level)){
+  const code=kind==='O'?languageSlots.shift():null;
+  const candidates=(kind==='P'?persona:pool.filter(i=>otherTrackLanguage(tracks[i])===code)).filter(i=>!used.has(i));
+  if(!candidates.length)throw Error('Insufficient unique tracks for memory rules');
+  const track=weightedPick(candidates,true);used.add(track);result.push(track);
+ }
+ return result;
+}
+function coverageNotice(){
+ const missing=familiarLanguages.filter(code=>!tracks.some(t=>t.languages.includes(code)));
+ if(missing.length)return 'The current demo has no '+missing.map(code=>languageNames[code]).join(' or ')+' tracks yet. Your choices are kept, but language matching is limited until the library is updated.';
+ const count=tracks.filter(t=>t.languages.some(code=>familiarLanguages.includes(code))).length;
+ return count<10?'Only '+count+' matching track'+(count===1?' is':'s are')+' available in this demo. Longer memory may offer fewer alternatives or repeat tracks.':'';
+}
+function updateLanguageForm(){
+ const first=$('firstLanguage').value,second=$('secondLanguage').value;
+ for(const option of $('secondLanguage').options)option.disabled=!!option.value&&option.value===first;
+ if(first&&first===second)$('secondLanguage').value='';
+ $('enterExperience').disabled=!first;
+ const chosen=[first,$('secondLanguage').value].filter(Boolean);
+ $('languagePills').querySelectorAll('[data-language]').forEach(button=>{
+  const selected=chosen.includes(button.dataset.language);
+  button.setAttribute('aria-pressed',String(selected));
+  button.disabled=false;
+ });
+
+}
+function resetExperienceControls(){
+ $('history').value=4;
+ $('agency').value=0;
+ $('memory').value=0;
+ setControllerOpen(false);
+ $('status').textContent='';
+}
+function enterExperience(event){
+ event.preventDefault();
+ const chosen=[$('firstLanguage').value].filter(Boolean);
+ if(!chosen.length||chosen.some(code=>!languageNames[code])||new Set(chosen).size!==chosen.length)return;
+ if(experienceStarted)stopForChange();
+ familiarLanguages=chosen;experienceStarted=true;resetExperienceControls();rebuildSlates();
+ queueBatch=[];queueHistory=null;queueMode=null;selectionCounts.fill(0);
+ resetRecommendations();render();
+ $('experience').hidden=false;closeChoosing(true);
+}
+
+let futureTracks=[], recentTracks=[], playedTrail=[], consideredTracks=[], decisionKey='';
+// Session exposure counts survive slider changes.
+const selectionCounts=tracks.map(()=>0);
+function pickGroup(groups,weights){
+ const total=weights.reduce((sum,w,d)=>sum+(groups[d].length?w:0),0);
+ if(!total)return groups.find(group=>group.length)||[];
+ let roll=Math.random()*total;
+ for(let d=0;d<groups.length;d++){
+  if(!groups[d].length||!weights[d])continue;
+  roll-=weights[d];if(roll<0)return groups[d];
+ }
+ return groups.findLast((group,d)=>group.length&&weights[d])||[];
+}
+function weightedPick(pool,balance=false){
+ if(!pool.length)return undefined;
+ let options=pickGroup([0,1,2].map(d=>pool.filter(i=>tracks[i].distance===d)),genreWeights[+$('history').value]);
+ if(balance){const least=Math.min(...options.map(i=>selectionCounts[i]));options=options.filter(i=>selectionCounts[i]===least);}
+ return options[Math.floor(Math.random()*options.length)];
+}
+function weightedSample(pool,n){const result=[];let rest=[...pool];while(result.length<n&&rest.length){const next=weightedPick(rest);if(next===undefined)break;result.push(next);rest=rest.filter(i=>i!==next);}return result;}
+let plannedTracks=[];
+function ensureFuture(n){
+ while(futureTracks.length<n){
+  if(!plannedTracks.length)plannedTracks=buildMemoryBatch(+$('history').value,[currentIndex(),...futureTracks]);
+  futureTracks.push(plannedTracks.shift());
+ }
+}
+function resetRecommendations(){
+ futureTracks=[];recentTracks=[];playedTrail=[];consideredTracks=[];decisionKey='';
+ plannedTracks=buildMemoryBatch(+$('history').value);
+ const first=plannedTracks.shift();position=currentSlate().indexOf(first);selectionCounts[first]++;recentTracks.push(first);
+}
+// Persona counts at the 2 / 6 / 8 retained-song settings.
+// Prefix quotas keep the same candidates when only retention changes.
+const alternativePersonaCounts=[[0,1,2],[0,2,2],[1,3,4],[2,5,6],[2,6,8]];
+function buildAlternativeCandidates(pool,level){
+ const targets=alternativePersonaCounts[level],sizes=[2,6,8];
+ const kinds=[];
+ let previousSize=0,previousPersona=0;
+ sizes.forEach((size,i)=>{
+  const p=targets[i]-previousPersona,o=size-previousSize-p;
+  kinds.push(...shuffled([...Array(p).fill('P'),...Array(o).fill('O')]));
+  previousSize=size;previousPersona=targets[i];
+ });
+ const result=[],languageCounts=new Map();let rest=[...pool];
+ for(const kind of kinds){
+  let candidates=rest.filter(i=>kind==='P'?isPersonaTrack(tracks[i]):!!otherTrackLanguage(tracks[i]));
+  // If a future catalogue is too small, use remaining songs without duplicating.
+  if(!candidates.length)candidates=rest;
+  if(!candidates.length)break;
+  if(kind==='O'){
+   const codes=[...new Set(candidates.map(i=>otherTrackLanguage(tracks[i])).filter(Boolean))];
+   if(codes.length){
+    const least=Math.min(...codes.map(code=>languageCounts.get(code)||0));
+    const balanced=codes.filter(code=>(languageCounts.get(code)||0)===least);
+    const code=balanced[Math.floor(Math.random()*balanced.length)];
+    candidates=candidates.filter(i=>otherTrackLanguage(tracks[i])===code);
+    languageCounts.set(code,(languageCounts.get(code)||0)+1);
+   }
+  }
+  const next=weightedPick(candidates);result.push(next);rest=rest.filter(i=>i!==next);
+ }
+ return result;
+}
+function alternatives(n){
+ const excluded=new Set([currentIndex(),...futureTracks]);
+ const key=familiarLanguages.join('|')+':'+$('history').value+':'+currentTrack().id+':'+[...excluded].sort((a,b)=>a-b).join(',');
+ if(decisionKey!==key){
+  consideredTracks=buildAlternativeCandidates(currentSlate().filter(i=>!excluded.has(i)),+$('history').value);decisionKey=key;
+ }
+ return consideredTracks.slice(0,n).map(i=>tracks[i]);
+}
+function renderAlternatives(count){
+ const items=alternatives(count),arc=$('alternativesArc');
+ $('alternativesSide').hidden=items.length===0;
+ const key=items.map(t=>t.id).join('|');
+ if(arc.dataset.trackKey===key)return;
+ stopOrbitWheel();
+ arc.dataset.trackKey=key;arc.scrollTop=0;
+ arc.innerHTML=items.map((track,i)=>{
+  const angle=items.length===1?0:-65+i*130/(items.length-1);
+  const radians=angle*Math.PI/180;
+  const x=52+20*Math.cos(radians),y=50+44*Math.sin(radians);
+  return `<div class="alternativeOrb" tabindex="0" role="group" aria-label="${escapeHtml(track.title+' by '+track.artist)}" style="--orb-x:${x}%;--orb-y:${y}%">
+   <span class="alternativeArt">${track.cover?`<img src="${escapeHtml(track.cover)}" alt="" loading="lazy" draggable="false">`:'♪'}</span>
+   <span class="alternativeInfo" aria-hidden="true"><b>${escapeHtml(track.title)}</b><span>${escapeHtml(track.artist)}</span></span>
+  </div>`;
+ }).join('');
+ const spacer=document.createElement('div');spacer.className='arcSpacer';spacer.setAttribute('aria-hidden','true');arc.appendChild(spacer);
+ arc.querySelectorAll('img').forEach(img=>img.onerror=()=>{img.hidden=true;});
+}
+
+let alternativeLayoutFrame=0;
+function scheduleAlternativeLayout(){
+ if(alternativeLayoutFrame)return;
+ alternativeLayoutFrame=requestAnimationFrame(()=>{alternativeLayoutFrame=0;layoutAlternativeArc();});
+}
+function layoutAlternativeArc(){
+ const side=$('alternativesSide'),arc=$('alternativesArc');
+ if(side.hidden)return;
+ const orbs=[...arc.querySelectorAll('.alternativeOrb')];
+ if(!orbs.length)return;
+ const desktop=window.innerWidth>1000;
+ const sideBounds=side.getBoundingClientRect();
+ side.style.width=desktop?Math.max(160,window.innerWidth-sideBounds.left-24)+'px':'';
+ const area=arc.getBoundingClientRect(),height=arc.clientHeight;
+ const padding=34,spacing=82;
+ const record=$('cover').getBoundingClientRect();
+ const queueSide=document.querySelector('.playlistSide').getBoundingClientRect();
+ const queueRight=$('queue').hidden?queueSide.right:$('queue').getBoundingClientRect().right;
+ const gap=Math.max(24,record.left-queueRight);
+ const desired=desktop?record.right+gap+28-area.left:56;
+ // Leave room to the right for the hover card, including at the arc's widest point.
+ // Reference arc: its widest point sits high, with the lower end curling inward.
+ const startAngle=-14*Math.PI/180,endAngle=43*Math.PI/180;
+ const radius=Math.max(1,height-padding*2)/(Math.sin(endAngle)-Math.sin(startAngle));
+ const inwardReach=radius*(1-Math.cos(endAngle));
+ const rightmost=Math.max(inwardReach+30,Math.min(desired+48,area.width-164));
+ arc.dataset.radius=String(radius);
+ arc.dataset.centerX=String(rightmost-radius);
+ arc.dataset.centerY=String(padding-radius*Math.sin(startAngle));
+ arc.dataset.startAngle=String(startAngle);
+ arc.dataset.endAngle=String(endAngle);
+ const angularStep=(endAngle-startAngle)/3;
+ arc.dataset.angularStep=String(angularStep);
+ arc.dataset.scrollStep=String(radius*angularStep);
+ const travel=Math.max(0,(orbs.length-4)*radius*angularStep);
+ arc.querySelector('.arcSpacer').style.height=(height+travel)+'px';
+ orbs.forEach((orb,i)=>{
+  orb.dataset.orbitIndex=String(i);
+  orb.style.setProperty('--info-width',Math.max(60,Math.min(146,area.width-rightmost-46))+'px');
+ });
+ updateAlternativeScrollState();
+}
+function updateAlternativeScrollState(){
+ const arc=$('alternativesArc');
+ $('arcUp').disabled=arc.scrollTop<=1;
+ $('arcDown').disabled=arc.scrollTop>=arc.scrollHeight-arc.clientHeight-1;
+ const radius=Number(arc.dataset.radius);if(!radius)return;
+ const cx=Number(arc.dataset.centerX),startAngle=Number(arc.dataset.startAngle),endAngle=Number(arc.dataset.endAngle),step=Number(arc.dataset.angularStep);
+ const cy=Number(arc.dataset.centerY),rotation=arc.scrollTop/radius;
+ arc.querySelectorAll('.alternativeOrb').forEach(orb=>{
+  const theta=startAngle+Number(orb.dataset.orbitIndex)*step-rotation;
+  // Let outgoing and incoming covers overlap softly at the ends of the four-song window.
+  const excess=Math.max(0,startAngle-theta,theta-endAngle);
+  const fade= Math.max(0,1-excess/(step*.85));
+  const opacity=fade*fade*(3-2*fade);
+  const visible=opacity>.005;
+  const y=cy+radius*Math.sin(theta);
+  orb.style.left=(cx+radius*Math.cos(theta))+'px';
+  // Keep hidden items from enlarging the native scroll area.
+  orb.style.top=(arc.scrollTop+Math.max(28,Math.min(arc.clientHeight-28,y)))+'px';
+  orb.style.visibility=visible?'visible':'hidden';
+  orb.style.pointerEvents=visible?'':'none';
+  orb.style.opacity=visible?String(opacity):'0';
+ });
+}
+for(const [id,direction] of [['arcUp',-1],['arcDown',1]])$(id).onclick=()=>{
+ stopOrbitWheel();
+ $('alternativesArc').scrollBy({top:direction*Number($('alternativesArc').dataset.scrollStep||82),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+};
+// Accumulate wheel input and ease toward it in a single animation loop.
+let orbitWheelFrame=0,orbitWheelTarget=0,orbitWheelTime=0,orbitWheelPosition=0,orbitWheelVelocity=0;
+function stopOrbitWheel(){cancelAnimationFrame(orbitWheelFrame);orbitWheelFrame=0;orbitWheelVelocity=0;}
+$('alternativesArc').addEventListener('wheel',event=>{
+ if(event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY)||!event.deltaY)return;
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const arc=$('alternativesArc'),max=Math.max(0,arc.scrollHeight-arc.clientHeight);
+ if(!max)return;
+ event.preventDefault();
+ if(!orbitWheelFrame){orbitWheelPosition=orbitWheelTarget=arc.scrollTop;orbitWheelVelocity=0;orbitWheelTime=performance.now();}
+ const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?arc.clientHeight:1);
+ // Compress strong flicks and limit the lead, so the disc feels weighted rather than racing away.
+ const impulse=100*Math.tanh(delta/100)*.72;
+ orbitWheelTarget=Math.max(0,Math.min(max,Math.max(orbitWheelPosition-180,Math.min(orbitWheelPosition+180,orbitWheelTarget+impulse))));
+ if(orbitWheelFrame)return;
+ const tick=now=>{
+  const dt=Math.min(.04,Math.max(0,(now-orbitWheelTime)/1000));orbitWheelTime=now;
+  const limit=Math.max(0,arc.scrollHeight-arc.clientHeight);
+  orbitWheelTarget=Math.max(0,Math.min(limit,orbitWheelTarget));
+  // Critically damped spring; keep fractional position independent of scrollTop rounding.
+  const omega=9,offset=orbitWheelPosition-orbitWheelTarget;
+  const carry=orbitWheelVelocity+omega*offset,decay=Math.exp(-omega*dt);
+  const next=orbitWheelTarget+(offset+carry*dt)*decay;
+  orbitWheelVelocity=(orbitWheelVelocity-omega*carry*dt)*decay;
+  orbitWheelPosition=Math.max(0,Math.min(limit,next));
+  arc.scrollTop=orbitWheelPosition;
+  if(Math.abs(orbitWheelTarget-orbitWheelPosition)<.35&&Math.abs(orbitWheelVelocity)<2){
+   arc.scrollTop=orbitWheelTarget;orbitWheelFrame=0;orbitWheelVelocity=0;return;
+  }
+  orbitWheelFrame=requestAnimationFrame(tick);
+ };
+ orbitWheelFrame=requestAnimationFrame(tick);
+},{passive:false});
+$('alternativesArc').addEventListener('pointerdown',stopOrbitWheel,{passive:true});
+$('alternativesArc').addEventListener('scroll',updateAlternativeScrollState,{passive:true});
+$('alternativesArc').addEventListener('focusin',event=>{
+ const orb=event.target.closest('.alternativeOrb');if(!orb)return;
+ const arc=$('alternativesArc'),radius=Number(arc.dataset.radius);
+ const target=(Number(orb.dataset.orbitIndex)*Number(arc.dataset.angularStep)-(Number(arc.dataset.endAngle)-Number(arc.dataset.startAngle))/2)*radius;
+ const y=parseFloat(orb.style.top)-arc.scrollTop;
+ if(y<44||y>arc.clientHeight-44)arc.scrollTo({top:Math.max(0,target),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+});
+window.addEventListener('resize',scheduleAlternativeLayout);
+
+// Short paraphrases of linked music writing; never generated from the history setting.
+const additionalReviews={"7tFI5cqfAoR7MIvmbw1qd8": {"tags": ["Synth pop", "Driving percussion", "Heartbreak"], "description": "Insistent drums and resonant vocals carry a synth-pop reflection on wanting to erase a past relationship.", "sourceLabel": "When The Horn Blows", "sourceUrl": "https://whenthehornblows.com/content/2025/2/27/djo-delete-ya"}, "62HKW77nt6tudsIHXT2A0M": {"tags": ["Gentle guitar", "Loose groove", "Slow build"], "description": "Gentle guitar and hesitant phrasing gradually open into an airy drum groove, before returning to an intimate, almost spoken delivery.", "sourceLabel": "The Bias List", "sourceUrl": "https://thebiaslist.com/2024/05/09/song-review-rm-bts-come-back-to-me/"}, "3xKsf9qdS1CyvXSMEid6g8": {"tags": ["Smooth vocals", "Ballad"], "description": "Frank Ocean’s smooth vocal delivery leads this lush ballad, a tender moment within Blonde’s reflective atmosphere.", "sourceLabel": "TIME", "sourceUrl": "https://time.com/4465752/frank-oceans-new-look-could-last/"}, "63GVuwlMwKKb9amBd0cTaF": {"tags": ["Acoustic strumming", "Electronic textures", "Upbeat"], "description": "Bright acoustic strumming meets electronic layers and brisk percussion, while repeated vocal phrases give the song an eager, romantic momentum.", "sourceLabel": "Pop Passion", "sourceUrl": "https://www.poppassionblog.com/post/album-review-lola-goth-babe"}, "5kIAnoGdxdtCNAl1722ll4": {"tags": ["Synth riff", "Piano", "Vocal harmonies"], "description": "A synth opening and piano accompaniment ease into a relaxed verse, with playful backing vocals lifting the melodic chorus.", "sourceLabel": "The Courier", "sourceUrl": "https://www.thecourieronline.co.uk/hidden-gems-the-golden-silvers-true-romance/"}, "2U7svZUGvR4tfKdyxv9mXu": {"tags": ["Guitar loop", "Reflective", "Vulnerable"], "description": "A guitar loop from Flawed Mangoes helped shape this reflection on support and connection, with the melody growing around a deeply personal idea.", "sourceLabel": "1883 · artist interview", "sourceUrl": "https://1883magazine.com/sombr/"}, "2uvE4L5ZsYKpv8hbK4TIOt": {"tags": ["Wah bass", "Vintage funk", "Soul textures"], "description": "Wah bass and recreated soul instrumentation give the track its vintage character. Thomas describes drawing on P-Funk to shape the bass sound.", "sourceLabel": "Song Exploder · artist interview", "sourceUrl": "https://songexploder.net/wp-content/uploads/2026/01/Song-Exploder-Leon-Thomas-Transcript.pdf"}, "0eAuGrXyGFYwur9ARUe7LJ": {"tags": ["Soft guitars", "Alternative R&B", "Memories"], "description": "Soft guitar textures and an inviting melody frame memories of a relationship, with an everyday object becoming a reminder of someone who has gone.", "sourceLabel": "LOS40 · music feature", "sourceUrl": "https://los40.com/2026/07/01/un-nuevo-caso-djo-quien-es-malcolm-todd-el-artista-que-ha-ascendido-en-listas-de-exitos-con-una-cancion-de-hace-dos-anos/"}, "7bxaFZ1O3cHkgLKMsdC3xR": {"tags": ["Repeated riff", "Reverb", "Heartbreak"], "description": "A repeating riff, layered harmonies and reverberant vocals make heartbreak feel strangely catchy, with atmospheric synths opening up the bridge.", "sourceLabel": "Soundstage · track review", "sourceUrl": "https://www.soundstagezine.com/sound/tame-impala-loser-song-review"}, "4LfCY65LvojKjWEnU7fNN4": {"tags": ["Piano pulse", "Driving drums", "Romantic"], "description": "Pulsing piano and galloping drums turn romantic excitement into a rising, expansive moment, balancing tenderness with a bigger anthemic release.", "sourceLabel": "The Atlantic · album review", "sourceUrl": "https://www.theatlantic.com/culture/2026/06/olivia-rodrigo-you-seem-pretty-sad-for-a-girl-so-in-love-review/687534/"}, "514joG57v4yKTsfQmz7stz": {"tags": ["Filtered synths", "Horn textures", "Vocal focus"], "description": "Filtered synth and horn textures sit behind the vocal. Producer Rogét Chahayed describes softening those sounds so they support the voice rather than overpower it.", "sourceLabel": "MusicRadar · producer interview", "sourceUrl": "https://www.musicradar.com/artists/i-pulled-up-the-sound-played-this-chord-and-thought-whoa-ive-never-heard-a-crazy-organ-sound-like-that-before-roget-chahayed-on-how-a-kontakt-preset-based-on-a-90s-casio-toy-keyboard-made-the-intro-to-travis-scotts-sicko-mode"}, "0kl6Ozan3fuUdCl6TlB15v": {"tags": ["Funk guitar", "Disco", "House groove"], "description": "Funk guitar and offbeat synth accents meet an easy house groove, with reverberant vocals adding a nostalgic disco glow.", "sourceLabel": "Electronic Groove · release coverage", "sourceUrl": "https://electronicgroove.com/anotr-join-54-ultra-on-new-single-talk-to-you/"}, "5BZsQlgw21vDOAjoqkNgKb": {"tags": ["Guitar", "Bass and drums", "Vocal focus"], "description": "Guitar and voice form the centre of the track, while bass and drums give the stripped-back arrangement its forward motion.", "sourceLabel": "Le Monde · album review", "sourceUrl": "https://www.lemonde.fr/en/culture/article/2025/07/19/justin-bieber-returns-with-swag-a-polished-and-confident-seventh-album_6743513_30.html"}, "5y2ijHECwFYWqcAHKTZgzD": {"tags": ["Bolero", "Brass", "Romantic"], "description": "Bolero influences and Mexican brass give this romantic opening a classic character, with Mars placing his vocal performance at the centre.", "sourceLabel": "El País · album review", "sourceUrl": "https://elpais.com/cultura/2026-02-27/critica-de-the-romantic-de-bruno-mars-un-refrito-cocinado-con-gusto.html"}, "42UBPzRMh5yyz0EDPr6fr1": {"tags": ["Country pop", "Playful", "Catchy hooks"], "description": "A country-flavoured stomp carries sharp, playful frustration, with an abundance of hooks keeping the complaint light on its feet.", "sourceLabel": "Our Culture · album review", "sourceUrl": "https://ourculturemag.com/2025/09/01/album-review-sabrina-carpenter-mans-best-friend/"}, "7so0lgd0zP2Sbgs2d7a1SZ": {"tags": ["Duet", "Full vocals", "Sincere"], "description": "Two committed vocal performances turn a declaration of love into a wholehearted singalong, with sincerity doing the emotional work.", "sourceLabel": "Pitchfork · album review", "sourceUrl": "https://pitchfork.com/reviews/albums/lady-gaga-mayhem/"}, "7ygpwy2qP3NbrxVkHvUhXY": {"tags": ["Acoustic layers", "Mellotron", "Anthemic"], "description": "Layered acoustic guitars form the foundation, while a cello-like Mellotron part and a late piano entrance gradually enrich the arrangement.", "sourceLabel": "Sound on Sound · recording interview", "sourceUrl": "https://www.soundonsound.com/techniques/classic-tracks-oasis-wonderwall"}, "2RkZ5LkEzeHGRsmDqKwmaJ": {"tags": ["Ballad", "Rising chorus", "Devotion"], "description": "A polished ballad with an ascending chorus, turning romantic devotion into a large, emotionally direct declaration.", "sourceLabel": "AP · album review", "sourceUrl": "https://apnews.com/article/79b79f4ef19b932efe6bf7ff8761700b"}, "5TTGoX70AFrTvuEtqHK37S": {"tags": ["Piano", "Dreamy guitars", "Slow ballad"], "description": "Piano chords and dreamy guitar textures create a slow, calming ballad, offering a softer atmosphere than its title might suggest.", "sourceLabel": "BandInsight · album review", "sourceUrl": "https://bandinsight.wordpress.com/2013/09/03/the-comprehensive-review-arctic-monkeys-am-9th-september-2013/"}, "2QjOHCTQ1Jl3zawyYOpxh6": {"tags": ["Spare production", "Intimate", "Restrained"], "description": "Spare production leaves room for small gestures of closeness, building an intimate love song through the contrast between warmth and cold.", "sourceLabel": "Dork · track profile", "sourceUrl": "https://readdork.com/track/the-neighbourhood-sweater-weather-2013"}, "3iy2QuCtCzpWnR6tia39AB": {"tags": ["Soft vocals", "Arpeggiated synths", "Restrained"], "description": "Bubbling synth patterns surround an understated vocal, with a restrained pop chorus that keeps the emotional tension close rather than pushing it outward.", "sourceLabel": "AP · album review", "sourceUrl": "https://apnews.com/article/6c689addb7892b2f08aa57568e722bb2"}, "4qW3BbQAwZsrnu8a3ZRdyT": {"tags": ["Moody guitars", "Steady rhythm", "Emotional restraint"], "description": "Atmospheric guitars and a controlled rhythm support a detached vocal, matching the tension of wanting a connection while recognising its limits.", "sourceLabel": "Nick & Tiff · song review", "sourceUrl": "https://nickandtiffmusicblog.com/2026/06/02/self-aware-by-temper-city-meaning/"}, "2KnuaZYoGzDoHiBTNYOTXG": {"tags": ["Samba pulse", "Slow burn", "Intimate"], "description": "A lightly ticking samba rhythm gives this slow-burning track an easy-listening surface, while its secretive romance adds a quietly unsettling edge.", "sourceLabel": "NME · album review", "sourceUrl": "https://www.nme.com/reviews/album/billie-eilish-happier-than-ever-review-3006594"}, "6GCcY6dVDVGxo52OZq9HVW": {"tags": ["Bright pop", "Carefree", "Upbeat"], "description": "A bright, pop-leaning moment with an effervescent, carefree mood, bringing a lighter lift to the surrounding album.", "sourceLabel": "Mix It All Up · album review", "sourceUrl": "https://mixitallup.com/2025/09/11/album-review-balu-brigada-portal/"}, "60MRYgAGGSdDG8mf5SjIPM": {"tags": ["Dreamy vocals", "Sweeping synths", "Warm harmonies"], "description": "Dreamy vocals and sweeping synths give this alternative-pop track a soft glow, with memorable harmonies keeping the atmosphere warm and inviting.", "sourceLabel": "NeuFutur · track review", "sourceUrl": "https://neufutur.com/2024/10/zimmer90-feel-like-we-used-to/"}, "5Z1U0knfYnsfvZycgDeOiC": {"tags": ["Strings", "Supporting vocals", "Yearning"], "description": "Supporting vocals and strings deepen the yearning in this duo recording, giving the song a fuller emotional setting than its earlier solo version.", "sourceLabel": "The Daily Vault · album review", "sourceUrl": "https://dailyvault.com/toc.php5?review=6518"}, "6vECYJHxYmm3Ydt3fF01pE": {"tags": ["Acoustic guitar", "Handclaps", "Reggae inflection"], "description": "Acoustic guitar and handclaps sit inside a relaxed, reggae-inflected pulse, while the laid-back vocal gives the danceable groove an unhurried feel.", "sourceLabel": "Billboard · single review", "sourceUrl": "https://www.worldradiohistory.com/Archive-All-Music/Billboard/00s/2014/BB-2014-25-07-05.pdf"}, "4KULAymBBJcPRpk1yO4dOG": {"tags": ["Country duet", "Contrasting voices", "Regret"], "description": "Bryan’s rough vocal and Musgraves’ clear delivery give this duet its emotional contrast, making remembered love feel like a conversation between two perspectives.", "sourceLabel": "Rolling Stone India · song review", "sourceUrl": "https://rollingstoneindia.com/top-songs/i-remember-everything/"}, "7BBZTDsqevrOEuhHCUDgtR": {"tags": ["Doo-wop", "Waltz", "Romantic"], "description": "A doo-wop sway and waltz rhythm bring an old-fashioned romantic character to this jazz-oriented performance.", "sourceLabel": "Pitchfork · Duper Sessions review", "sourceUrl": "https://pitchfork.com/reviews/albums/4745-duper-sessions/"}, "18uwL0vNUanqZH0ro2QcOP": {"tags": ["Guitar", "Expressive vocals", "Intimate"], "description": "Simple guitar accompaniment leaves room for an expressive vocal, with small changes in delivery giving the intimate setting its character.", "sourceLabel": "The Musical Hype · track review", "sourceUrl": "https://themusicalhype.com/jeremy-zucker-comethru-track-review/"}, "1ZMiCix7XSAbfAJlEZWMCp": {"tags": ["Ballad", "Heartbreak", "Vulnerable"], "description": "A vulnerable ballad centred on heartbreak and personal decline, with the emotional weight resting on an exposed, direct performance.", "sourceLabel": "The FADER · video coverage", "sourceUrl": "https://www.thefader.com/2020/02/28/harry-styles-falling-video"}, "6cx5CvFhqN19efStehJqoW": {"tags": ["Brushed drums", "Double bass", "Intimate vocals"], "description": "Brushed drums, walking double bass and gentle piano sit behind a close vocal, while layered harmonies add warmth to the jazz-pop arrangement.", "sourceLabel": "Music Talkers · track review", "sourceUrl": "https://musictalkers.com/reviews/8297-review-valentine-%E2%80%93-laufey"}};
+const tasteLabels=[
+ 'explores beyond your familiar languages',
+ 'mixes familiar and unfamiliar vocal languages',
+ 'leans toward your languages, with new discoveries',
+ 'mostly your languages, with occasional shifts',
+ 'your familiar languages, with subtle style variation'
+];
+function recommendationNote(t){
+ const review=additionalReviews[t.id];
+ return review||{tags:t.genres.slice(0,3),description:'',sourceUrl:''};
+}
+const counts=[0,2,6,8];let position=0,playing=false,audio=null,playRequest=0,loadedTrack=null,wantsPlayback=false;
+let preferences={likes:[],saved:[]};try{const p=JSON.parse(localStorage.getItem('echo-track-preferences')||'null');if(p&&Array.isArray(p.likes)&&Array.isArray(p.saved))preferences={likes:p.likes.filter(x=>typeof x==='string'),saved:p.saved.filter(x=>typeof x==='string')}}catch{}
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const currentSlate=()=>slates[+$('history').value];
+const currentIndex=()=>currentSlate()[position%currentSlate().length];
+const currentTrack=()=>tracks[currentIndex()];
+const paths={play:'<path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/>',pause:'<path d="M8 5v14M16 5v14" stroke-width="4"/>',next:'<path d="m5 5 10 7-10 7Z" fill="currentColor" stroke="none"/><path d="M19 5v14"/>',prev:'<path d="m19 5-10 7 10 7Z" fill="currentColor" stroke="none"/><path d="M5 5v14"/>',like:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',save:'<path d="M12 5v14M5 12h14"/>',check:'<path d="m5 12 4 4L19 6"/>'};
+function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths[name]+'</svg>'}
+function song(t,i,interactive=false){const tag=interactive?'button':'div';return `<${tag} class="song${interactive?' pickable':''}" ${interactive?`type="button" data-track="${t.id}" aria-label="Play ${escapeHtml(t.title)} by ${escapeHtml(t.artist)}"`:''} style="animation-delay:${i*30}ms"><span class="mini" style="--h:${t.group*65+150}">${t.cover?`<img src="${escapeHtml(t.cover)}" alt="" loading="lazy">`:''}</span><span class="songText"><b>${escapeHtml(t.title)}</b><small>${escapeHtml(t.artist)}</small></span></${tag}>`}
+function upcoming(n){ensureFuture(n);return futureTracks.slice(0,n).map(i=>tracks[i]);}
+function updatePlaybackUI(){
+ $('cover').setAttribute('aria-label',playing?'Pause':'Play');$('cover').setAttribute('aria-pressed',String(playing));$('recordRotor').style.animationPlayState=playing?'running':'paused';$('recordControl').innerHTML=icon(playing?'pause':'play');
+}let queueBatch = [];
+let queueHistory = null;
+let queueMode = null;
+
+function updateQueueBatch() {
+ // One queue across modes; keep the visible upcoming songs in playback order.
+ queueBatch=[currentTrack(),...upcoming(5)].map(track=>({track}));
+ queueMode=+$('agency').value;queueHistory=+$('history').value;
+}
+function render(){
+ if(!experienceStarted)return;
+ const notice=coverageNotice();$('catalogNotice').textContent=notice;$('catalogNotice').hidden=!notice;
+ const h=+$('history').value,a=+$('agency').value,c=counts[+$('memory').value],t=currentTrack();
+ $('queue').hidden=a===3;
+ $('historyValue').innerHTML=periods[h]+' <small>'+['Explore vocal languages','Mix vocal languages','Lean toward your languages','Mostly your languages','Your familiar languages'][h]+'</small>';
+ for(const [id,total] of [['keptLeft',Math.floor(c/2)],['keptRight',Math.ceil(c/2)]]){
+  const side=$(id);
+  if(!side.children.length)side.innerHTML='<span class="keptBlock"></span>'.repeat(4);
+  side.querySelectorAll('.keptBlock').forEach((dot,index)=>{
+   dot.classList.toggle('is-kept',id==='keptLeft'?index>=4-total:index<total);
+  });
+ }
+ $('agencyValue').textContent=modes[a];
+ $('actionWedge').querySelectorAll('[data-action-step]').forEach(segment=>segment.classList.toggle('active',Number(segment.dataset.actionStep)<=a));$('memoryValue').innerHTML=(c?c+' tracks':'None')+' <small>Kept from this pass</small>';
+ const filledBlocks=[1,8,16,24,32][h];
+ $('memoryBlocks').querySelectorAll('span').forEach((block,index)=>{
+  const shade=Math.round(48+(220-48)*index/31);
+  block.style.setProperty('--memory-shade',`rgb(${shade}, ${shade}, ${shade})`);
+  block.classList.toggle('filled',index<filledBlocks);
+ });
+ $('history').setAttribute('title',periods[h]);
+ $('history').setAttribute('aria-valuetext',periods[h]);$('agency').setAttribute('aria-valuetext',modes[a]);$('memory').setAttribute('aria-valuetext',c+' retained tracks');
+ $('title').textContent=t.title;$('artist').textContent=t.artist;
+ const img=$('artwork');if(img.getAttribute('src')!==t.cover){img.hidden=!t.cover;img.alt=t.title+' cover';if(t.cover)img.src=t.cover;else img.removeAttribute('src')}
+ img.onerror=()=>{img.hidden=true};
+updateQueueBatch();
+renderAlternatives(c);
+
+const queueElement = $('queueSongs');
+const batchKey = a+':'+queueBatch.map(item => item.track.id).join('|');
+
+/* 只有换了一批歌曲，才重新生成列表 */
+if (queueElement.dataset.batchKey !== batchKey) {
+  queueElement.innerHTML = queueBatch
+    .map(({ track }, i) => `
+      <div class="queueRow" data-queue-track="${track.id}">
+        <span class="queueMarker" aria-hidden="true">▶</span>
+        ${song(track, i, a<2)}
+        ${a===0&&i>0?`<button type="button" class="reorderHandle" data-reorder="${track.id}" aria-label="Reorder ${escapeHtml(track.title)}. Use arrow up or down." title="Drag to reorder · ↑ / ↓">⠿</button>`:''}
+      </div>
+    `)
+    .join('');
+
+  queueElement.dataset.batchKey = batchKey;
+}
+
+/* 同一批内切歌，只更新三角形和高亮 */
+queueElement.querySelectorAll('.queueRow').forEach(row => {
+  const isCurrent =
+    row.dataset.queueTrack === currentTrack().id;
+
+  row.classList.toggle('is-current', isCurrent);
+
+  if (isCurrent) {
+    row.setAttribute('aria-current', 'true');
+  } else {
+    row.removeAttribute('aria-current');
+  }
+});
+ $('feedback').hidden=false;
+ $('feedback').innerHTML=[['like','likes','Like'],['save','saved','Save to collection']].map(([action,key,label])=>{const active=preferences[key].includes(t.id);return `<button type="button" data-action="${action}" aria-label="${label}" title="${label}" aria-pressed="${active}" class="${active?'selected':''}">${icon(action==='save'&&active?'check':action)}</button>`}).join('');
+ $('transport').innerHTML=(a<2?'<button type="button" class="icon" id="prev" aria-label="Previous track" title="Previous track">'+icon('prev')+'</button>':'')+(a<3?'<button type="button" class="icon" id="next" aria-label="Next track" title="Next track">'+icon('next')+'</button>':'');
+ $('shuffleQueue').hidden=a!==0;$('shuffleQueue').disabled=futureTracks.length<2;
+ bindQueueReordering();
+ if($('prev'))$('prev').disabled=playedTrail.length===0;
+ if($('next'))$('next').onclick=()=>advance();if($('prev'))$('prev').onclick=()=>advance({backwards:true});
+ $('queueSongs').querySelectorAll('button[data-track]').forEach(b=>b.onclick=()=>selectTrack(b.dataset.track));
+ $('feedback').querySelectorAll('button[data-action]').forEach(b=>b.onclick=()=>togglePreference(b.dataset.action));
+ document.body.dataset.mode=a;updatePlaybackUI();updateTime();scheduleAlternativeLayout();
+}
+function togglePreference(action){if(!['like','save'].includes(action))return;const key=action==='like'?'likes':'saved',id=currentTrack().id,had=preferences[key].includes(id);preferences[key]=had?preferences[key].filter(x=>x!==id):[...preferences[key],id];try{localStorage.setItem('echo-track-preferences',JSON.stringify(preferences))}catch{}render()}
+function formatTime(n){return Math.floor(n/60)+':'+String(Math.floor(n%60)).padStart(2,'0')}
+function updateTime(){const matches=loadedTrack===currentTrack().id,seconds=matches?(audio?.currentTime||0):0,duration=matches&&Number.isFinite(audio?.duration)?audio.duration:0;$('elapsed').textContent=formatTime(seconds);$('duration').textContent=duration?formatTime(duration)+(audio instanceof Audio?' preview':''):(location.protocol==='file:'?'Preview':formatTime(currentTrack().duration/1000));$('progress').style.width=(duration?seconds/duration*100:0)+'%'}
+function stopForChange(){playRequest++;wantsPlayback=false;audio?.pause();playing=false;loadedTrack=null;updatePlaybackUI()}
+function getAudio(){if(!audio){audio=location.protocol==='file:'?new Audio():new SpotifyAudio();audio.preload='metadata';audio.addEventListener('timeupdate',updateTime);audio.addEventListener('loadedmetadata',updateTime);audio.addEventListener('playing',()=>{playing=wantsPlayback;updatePlaybackUI()});audio.addEventListener('pause',()=>{playing=false;updatePlaybackUI()});audio.addEventListener('waiting',()=>{playing=false;updatePlaybackUI()});audio.addEventListener('ended',()=>{playing=false;updatePlaybackUI();if(wantsPlayback)advance({automatic:true})});audio.addEventListener('error',()=>{playing=false;wantsPlayback=false;playRequest++;$('status').textContent=audio.error?.message||'Playback unavailable. Click the record to try again.';updatePlaybackUI()})}return audio}
+async function start(){const t=currentTrack(),el=getAudio(),request=++playRequest;wantsPlayback=true;if(location.protocol==='file:'&&!t.preview){wantsPlayback=false;$('status').textContent='No preview is available for this track.';return}if(loadedTrack!==t.id){el.src=location.protocol==='file:'?t.preview:'spotify:track:'+t.id;el.currentTime=0;loadedTrack=t.id}else if(el.ended){el.currentTime=0}try{await el.play();if(request!==playRequest)return;playing=true;$('status').textContent='';updatePlaybackUI()}catch(error){if(request!==playRequest)return;playing=false;wantsPlayback=false;$('status').textContent=error.message||'Click the record to try playback again.';updatePlaybackUI()}}
+function choosePosition(target,{keepFuture=false,backwards=false}={}){
+ if(!Number.isInteger(target)||target<0||target>=currentSlate().length)return false;
+ const previous=currentIndex();stopForChange();if(!backwards&&currentSlate()[target]!==previous)playedTrail.push(previous);
+ position=target;selectionCounts[currentIndex()]++;if(!keepFuture)futureTracks=[];
+ recentTracks.push(currentIndex());recentTracks=recentTracks.slice(-20);decisionKey='';
+ render();start();return true;
+}
+function selectTrack(id){
+ if(+$('agency').value>=2)return false;
+ const target=currentSlate().findIndex(i=>tracks[i].id===id);
+ if(target<0)return false;
+ if(id===currentTrack().id){start();return true;}
+ const queuedIndex=futureTracks.findIndex(i=>tracks[i].id===id);
+ if(queuedIndex>=0){
+  // Preserve the visible playlist order, including tracks skipped by a direct click.
+  playedTrail.push(currentIndex(),...futureTracks.slice(0,queuedIndex));
+  futureTracks=futureTracks.slice(queuedIndex+1);
+  return choosePosition(target,{keepFuture:true,backwards:true});
+ }
+ return choosePosition(target);
+}
+function advance({automatic=false,backwards=false}={}){
+ const mode=+$('agency').value;
+ if(!automatic&&(mode===3||(backwards&&mode>=2)))return false;
+ if(backwards){
+  while(playedTrail.length&&playedTrail[playedTrail.length-1]===currentIndex())playedTrail.pop();
+  const previous=playedTrail.pop();if(previous===undefined)return false;
+  const returnTo=currentIndex();
+  futureTracks=[returnTo,...futureTracks.filter(i=>i!==returnTo&&i!==previous)];
+  return transitionQueueTo(currentSlate().indexOf(previous),{backwards:true,keepFuture:true},-1);
+ }
+ // Playback follows the visible queue in every mode.
+ ensureFuture(1);const next=futureTracks.shift()??(currentSlate().length===1?currentIndex():undefined);
+ if(next===undefined)return false;
+ return transitionQueueTo(currentSlate().indexOf(next),{keepFuture:true},1);
+}
+function transitionQueueTo(target,options,direction){
+ const queue=$('queueSongs');
+ queue.querySelectorAll('.queueExit').forEach(row=>row.remove());
+ const rows=[...queue.querySelectorAll('.queueRow')];
+ const before=rows.map(row=>({id:row.dataset.queueTrack,top:row.getBoundingClientRect().top}));
+ const exitIndex=direction===1?0:rows.length-1;
+ const outgoing=rows[exitIndex]?.cloneNode(true);
+ const changed=choosePosition(target,options);
+ if(changed&&before.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const duration=440,easing='cubic-bezier(.22,1,.36,1)';
+  const step=before[1].top-before[0].top;
+  const after=[...queue.querySelectorAll('.queueRow')];
+  after.forEach(row=>{
+   const old=before.find(item=>item.id===row.dataset.queueTrack);
+   const offset=old?old.top-row.getBoundingClientRect().top:direction*step;
+   row.animate([{transform:`translateY(${offset}px)`,opacity:old?1:0},{transform:'translateY(0)',opacity:1}],{duration,easing});
+  });
+  if(outgoing&&!after.some(row=>row.dataset.queueTrack===before[exitIndex].id)){
+   outgoing.classList.add('queueExit');outgoing.setAttribute('aria-hidden','true');outgoing.inert=true;
+   outgoing.style.top=(before[exitIndex].top-before[0].top)+'px';
+   outgoing.removeAttribute('data-queue-track');queue.appendChild(outgoing);
+   const animation=outgoing.animate([{transform:'translateY(0)',opacity:1},{transform:`translateY(${-direction*10}px)`,opacity:0}],{duration:220,easing:'ease-out'});
+   animation.onfinish=()=>outgoing.remove();animation.oncancel=()=>outgoing.remove();
+  }
+ }
+ return changed;
+}
+function moveQueuedTrack(id,targetId){
+ if(+$('agency').value!==0)return false;
+ const from=futureTracks.findIndex(i=>tracks[i].id===id),to=futureTracks.findIndex(i=>tracks[i].id===targetId);
+ if(from<0||to<0||from===to)return false;
+ const [track]=futureTracks.splice(from,1);futureTracks.splice(to,0,track);
+ render();return true;
+}
+function shuffleUpcoming(){
+ if(+$('agency').value!==0||futureTracks.length<2)return false;
+ const original=[...futureTracks];
+ for(let i=futureTracks.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[futureTracks[i],futureTracks[j]]=[futureTracks[j],futureTracks[i]];}
+ if(futureTracks.every((v,i)=>v===original[i]))futureTracks.push(futureTracks.shift());
+ render();return true;
+}
+let suppressQueueClick=false;
+$('queueSongs').addEventListener('click',event=>{if(suppressQueueClick){event.preventDefault();event.stopImmediatePropagation();}},true);
+function bindQueueReordering(){
+ $('queueSongs').querySelectorAll('[data-reorder]').forEach(handle=>{
+  handle.onkeydown=event=>{
+   if(!['ArrowUp','ArrowDown'].includes(event.key))return;
+   event.preventDefault();
+   const id=handle.dataset.reorder,index=futureTracks.findIndex(i=>tracks[i].id===id);
+   const target=futureTracks[index+(event.key==='ArrowUp'?-1:1)];
+   if(target!==undefined&&moveQueuedTrack(id,tracks[target].id))$('queueSongs').querySelector(`[data-reorder="${id}"]`)?.focus();
+  };
+  const row=handle.closest('.queueRow');
+  row.classList.add('reorderable');
+  row.ondragstart=event=>event.preventDefault();
+  row.onpointerdown=event=>{
+   if(event.button!==0||+$('agency').value!==0)return;
+   const originX=event.clientX,originY=event.clientY;
+   let dragging=false,targetId=null;
+   const slots=[...$('queueSongs').querySelectorAll('.queueRow')].filter(el=>el.querySelector('[data-reorder]')).map(el=>({el,id:el.dataset.queueTrack,rect:el.getBoundingClientRect()}));
+   const rowRect=row.getBoundingClientRect();
+   row.setPointerCapture(event.pointerId);
+   const clearTargets=()=> $('queueSongs').querySelectorAll('.dropTarget').forEach(el=>el.classList.remove('dropTarget'));
+   row.onpointermove=e=>{
+    if(!dragging&&Math.hypot(e.clientX-originX,e.clientY-originY)<6)return;
+    if(!dragging){dragging=true;suppressQueueClick=true;row.classList.add('dragging');}
+    e.preventDefault();clearTargets();
+    const dy=Math.max(slots[0].rect.top-rowRect.top,Math.min(slots[slots.length-1].rect.top-rowRect.top,e.clientY-originY));
+    row.style.transform=`translate3d(0,${dy}px,0)`;
+    // Use original slot geometry: the moving row must not intercept drop targeting.
+    const center=rowRect.top+rowRect.height/2+dy;
+    const nearest=slots.reduce((best,slot)=>Math.abs(slot.rect.top+slot.rect.height/2-center)<Math.abs(best.rect.top+best.rect.height/2-center)?slot:best,slots[0]);
+    targetId=nearest.id;
+    if(targetId!==handle.dataset.reorder)nearest.el.classList.add('dropTarget');
+   };
+   const finish=e=>{
+    if(row.hasPointerCapture(e.pointerId))row.releasePointerCapture(e.pointerId);
+    const before=new Map([...$('queueSongs').querySelectorAll('.queueRow')].map(el=>[el.dataset.queueTrack,el.getBoundingClientRect().top]));
+    row.classList.remove('dragging');clearTargets();
+    row.style.transform='';
+    const id=handle.dataset.reorder;
+    row.onpointermove=null;row.onpointerup=null;row.onpointercancel=null;
+    if(dragging){
+     if(e.type==='pointerup'&&targetId&&moveQueuedTrack(id,targetId))$('queueSongs').querySelector(`[data-reorder="${id}"]`)?.focus({preventScroll:true});
+     if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      $('queueSongs').querySelectorAll('.queueRow').forEach(el=>{
+       const previousTop=before.get(el.dataset.queueTrack);
+       if(previousTop===undefined)return;
+       const delta=previousTop-el.getBoundingClientRect().top;
+       if(Math.abs(delta)>.5)el.animate([{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.22,1,.36,1)'});
+      });
+     }
+     setTimeout(()=>{suppressQueueClick=false;},0);
+    }else if(e.type==='pointerup'&&!event.target.closest('[data-reorder]')){
+     // Pointer capture retargets click to the row: handle a simple tap explicitly.
+     suppressQueueClick=true;selectTrack(id);setTimeout(()=>{suppressQueueClick=false;},0);
+    }
+   };
+   row.onpointerup=finish;row.onpointercancel=finish;
+  };
+ });
+}
+$('shuffleQueue').onclick=shuffleUpcoming;
+function toggle(){if(wantsPlayback||playing){playRequest++;wantsPlayback=false;audio?.pause();playing=false;updatePlaybackUI()}else start()}
+function configure(x){if(!experienceStarted)throw Error('Choose your language preferences before entering the experience');if(!x||Object.keys(x).some(k=>!['history','agency','retention'].includes(k))||!Number.isInteger(x.history)||x.history<0||x.history>4||!Number.isInteger(x.agency)||x.agency<0||x.agency>3||!Number.isInteger(x.retention)||x.retention<0||x.retention>3)throw Error('Invalid slider values');const changed=+$('history').value!==x.history;if(changed)stopForChange();$('history').value=x.history;$('agency').value=x.agency;$('memory').value=x.retention;if(changed)resetRecommendations();render();return{history:periods[x.history],uncertainty:levels[x.history],agency:modes[x.agency],retained:counts[x.retention],track:currentTrack().title,candidateCount:currentSlate().length,historySource:'simulated',familiarLanguages:[...familiarLanguages],languages:currentTrack().languages}}
+for(const id of ['history','agency','memory'])$(id).addEventListener('input',()=>{if(id==='history'){const resume=wantsPlayback;stopForChange();resetRecommendations();render();if(resume)start()}else render()});
+function updateControllerLift(){
+ if($('controllerPanel').hidden)return;
+ const stage=document.querySelector('#experience > .space');
+ const time=document.querySelector('.player .time');
+ const header=document.querySelector('body > header');
+ // Undo the current animated translation when measuring the original stage position.
+ const translateY=el=>parseFloat(getComputedStyle(el).translate.split(/\s+/)[1])||0;
+ const panelTop=$('controllerPanel').getBoundingClientRect().top;
+ const playerBottom=time.getBoundingClientRect().bottom-translateY(stage);
+ const headerBottom=header.getBoundingClientRect().bottom-translateY(header);
+ const lift=Math.max(headerBottom+8,playerBottom-panelTop+24,0);
+ document.body.style.setProperty('--music-stage-y',-Math.ceil(lift)+'px');
+}
+window.addEventListener('resize',()=>{if(!$('controllerPanel').hidden)updateControllerLift();});
+if(typeof ResizeObserver!=='undefined'){
+ const controllerLayoutObserver=new ResizeObserver(()=>{if(!$('controllerPanel').hidden)updateControllerLift();});
+ controllerLayoutObserver.observe($('controllerPanel'));
+ controllerLayoutObserver.observe(document.querySelector('.player'));
+}
+function setControllerOpen(open){
+ $('controllerPanel').hidden=!open;
+ if(open)updateControllerLift();
+ else document.body.style.setProperty('--music-stage-y','0px');
+ $('toggleController').setAttribute('aria-expanded',String(open));
+ const label=open?'Hide listening controller':'Show listening controller';
+ $('toggleController').setAttribute('aria-label',label);$('toggleController').title=label;
+}
+$('toggleController').onclick=()=>setControllerOpen($('controllerPanel').hidden);
+$('closeController').onclick=()=>{setControllerOpen(false);$('toggleController').focus();};
+$('cover').onclick=toggle;
+for(const code of Object.keys(languageNames)){
+ for(const id of ['firstLanguage','secondLanguage']){
+  const option=document.createElement('option');option.value=code;option.textContent=languageNames[code];$(id).appendChild(option);
+ }
+}
+const languageGlyphs={yue:'粵',en:'Aa',fr:'Fr',ja:'あ',ko:'한',zh:'中',es:'Ñ'};
+$('languagePills').innerHTML=Object.entries(languageNames).sort((a,b)=>a[1].localeCompare(b[1],'en')).map(([code,name])=>`<button type="button" class="languagePill" data-language="${code}" aria-pressed="false"><span aria-hidden="true">${languageGlyphs[code]}</span>${name}</button>`).join('');
+$('languagePills').querySelectorAll('[data-language]').forEach(button=>button.onclick=()=>{
+ $('firstLanguage').value=button.dataset.language;
+ $('secondLanguage').value='';
+ updateLanguageForm();
+});
+$('firstLanguage').addEventListener('change',updateLanguageForm);
+$('secondLanguage').addEventListener('change',updateLanguageForm);
+$('languageForm').addEventListener('submit',enterExperience);
+let drawerTimer=null;
+function openChoosing(){
+ clearTimeout(drawerTimer);
+ updateLanguageForm();
+ const drawer=$('onboarding');
+ if(!drawer.open)drawer.showModal();
+ document.body.classList.add('choosingOpen');
+ $('languageLogo').setAttribute('aria-expanded','true');
+ // Flush the closed position so the panel slides out from the mark's side.
+ void drawer.offsetWidth;drawer.classList.add('is-open');
+ $('languagePills').querySelector('[aria-pressed="true"]')?.focus();
+}
+function closeChoosing(entered=false){
+ const drawer=$('onboarding');
+ drawer.classList.remove('is-open');
+ $('languageLogo').setAttribute('aria-expanded','false');
+ clearTimeout(drawerTimer);
+ drawerTimer=setTimeout(()=>{
+  drawer.close();document.body.classList.remove('choosingOpen');
+  (entered?$('cover'):$('languageLogo')).focus();
+ },matchMedia('(prefers-reduced-motion: reduce)').matches?0:520);
+}
+$('languageLogo').onclick=openChoosing;
+$('closeChoosing').onclick=()=>closeChoosing();
+$('onboarding').addEventListener('cancel',event=>{event.preventDefault();closeChoosing();});
+$('onboarding').addEventListener('click',event=>{
+ if(event.target!==$('onboarding'))return;
+ const bounds=$('onboarding').getBoundingClientRect();
+ if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)closeChoosing();
+});
+$('firstLanguage').value=familiarLanguages[0];
+updateLanguageForm();
+resetExperienceControls();rebuildSlates();resetRecommendations();
+window.saveMusicSession=()=>sessionStorage.setItem('music-oauth-session',JSON.stringify({
+ familiarLanguages,history:+$('history').value,agency:+$('agency').value,memory:+$('memory').value,
+ current:currentIndex(),futureTracks,plannedTracks,playedTrail,recentTracks,selectionCounts
+}));
+try{
+ const saved=JSON.parse(sessionStorage.getItem('music-oauth-session'));
+ sessionStorage.removeItem('music-oauth-session');
+ const validIndex=i=>Number.isInteger(i)&&i>=0&&i<tracks.length;
+ if(saved&&saved.familiarLanguages?.length===1&&languageNames[saved.familiarLanguages[0]]&&
+   Number.isInteger(saved.history)&&saved.history>=0&&saved.history<=4&&
+   Number.isInteger(saved.agency)&&saved.agency>=0&&saved.agency<=3&&
+   Number.isInteger(saved.memory)&&saved.memory>=0&&saved.memory<=3&&validIndex(saved.current)&&
+   ['futureTracks','plannedTracks','playedTrail','recentTracks'].every(k=>Array.isArray(saved[k])&&saved[k].every(validIndex))){
+  familiarLanguages=saved.familiarLanguages;$('firstLanguage').value=familiarLanguages[0];updateLanguageForm();
+  $('history').value=saved.history;$('agency').value=saved.agency;$('memory').value=saved.memory;
+  rebuildSlates();position=currentSlate().indexOf(saved.current);
+  futureTracks=saved.futureTracks;plannedTracks=saved.plannedTracks;playedTrail=saved.playedTrail;recentTracks=saved.recentTracks;
+  if(Array.isArray(saved.selectionCounts)&&saved.selectionCounts.length===tracks.length)
+   saved.selectionCounts.forEach((n,i)=>selectionCounts[i]=Number.isFinite(n)&&n>=0?n:0);
+ }
+}catch{}
+render();
+window.spotifyPlaybackReady?.then(connected=>{if(window.spotifyAuthError)$('status').textContent=window.spotifyAuthError;if(connected)getAudio().connect().catch(error=>{$('status').textContent=error.message;});});
+if(document.modelContext?.registerTool){try{Promise.resolve(document.modelContext.registerTool({name:'configure_listening',description:'Configure history window, system autonomy and retention. Short histories explore vocal languages; long histories focus on the selected familiar languages. Genre varies secondarily. Defaults to English until language preferences are changed. Does not start audio.',inputSchema:{type:'object',properties:{history:{type:'integer',minimum:0,maximum:4},agency:{type:'integer',minimum:0,maximum:3},retention:{type:'integer',minimum:0,maximum:3}},required:['history','agency','retention'],additionalProperties:false},annotations:{readOnlyHint:false},execute:configure})).catch(()=>{})}catch{}}
+</script></body></html>
